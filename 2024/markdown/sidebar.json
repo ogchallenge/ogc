@@ -1,0 +1,128 @@
+{
+  "pages": [
+    {
+      "id": "problem-description",
+      "file": "problem-description.md",
+      "title": {
+        "en": "Problem Description & Ranking Criteria",
+        "ko": "문제 설명 및 순위 결정 방법"
+      }
+    },
+    {
+      "id": "baseline-algorithm",
+      "file": "baseline-algorithm.md",
+      "title": {
+        "en": "Development Environment & Baseline Algorithm",
+        "ko": "개발 환경 및 베이스라인 알고리즘"
+      }
+    },
+    {
+      "id": "preliminary-practice",
+      "file": "preliminary-practice.md",
+      "title": {
+        "en": "Preliminary Practice Problems",
+        "ko": "예선 연습 문제 및 평가 안내"
+      }
+    },
+    {
+      "id": "preliminary-results",
+      "file": "preliminary-results.md",
+      "title": {
+        "en": "Preliminary Results",
+        "ko": "예선 결과"
+      }
+    },
+    {
+      "id": "main-practice",
+      "file": "main-practice.md",
+      "title": {
+        "en": "Main Stage Practice Problems",
+        "ko": "본선 연습 문제 및 평가 안내"
+      }
+    },
+    {
+      "id": "main-results",
+      "file": "main-results.md",
+      "title": {
+        "en": "Main Stage Results",
+        "ko": "본선 결과"
+      }
+    },
+    {
+      "id": "final-practice",
+      "file": "final-practice.md",
+      "title": {
+        "en": "Final Practice Problems",
+        "ko": "결선 연습 문제 및 평가 안내"
+      }
+    },
+    {
+      "id": "final-submission",
+      "file": "final-submission.md",
+      "title": {
+        "en": "Submission & Presentation Guide",
+        "ko": "결선 제출 및 발표 안내"
+      }
+    },
+    {
+      "id": "final-results-algorithms",
+      "file": "final-results-algorithms.md",
+      "title": {
+        "en": "Final Results & Algorithms",
+        "ko": "결선 결과 및 알고리즘 공개"
+      }
+    },
+    {
+      "id": "final-results",
+      "file": "final-results.md",
+      "title": {
+        "en": "Final Results",
+        "ko": "최종 결과"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "title": {
+        "en": "Problem & Algorithm",
+        "ko": "문제 및 알고리즘"
+      },
+      "items": [
+        "problem-description",
+        "baseline-algorithm"
+      ]
+    },
+    {
+      "title": {
+        "en": "Preliminary",
+        "ko": "예선"
+      },
+      "items": [
+        "preliminary-practice",
+        "preliminary-results"
+      ]
+    },
+    {
+      "title": {
+        "en": "Main Stage",
+        "ko": "본선"
+      },
+      "items": [
+        "main-practice",
+        "main-results"
+      ]
+    },
+    {
+      "title": {
+        "en": "Final Stage",
+        "ko": "결선"
+      },
+      "items": [
+        "final-practice",
+        "final-submission",
+        "final-results-algorithms",
+        "final-results"
+      ]
+    }
+  ]
+}
