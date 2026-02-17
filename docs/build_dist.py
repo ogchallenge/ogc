@@ -154,12 +154,12 @@ def hash_markdown_files(year_dir: Path) -> tuple[dict[str, str], dict[str, str]]
     return name_map, path_map
 
 
-def hash_sidebar_json(year_dir: Path, markdown_name_map: dict[str, str]) -> tuple[str | None, dict[str, str]]:
-    sidebar_path = year_dir / "markdown" / "sidebar.json"
-    if not sidebar_path.exists():
+def hash_contents_json(year_dir: Path, markdown_name_map: dict[str, str]) -> tuple[str | None, dict[str, str]]:
+    contents_path = year_dir / "markdown" / "contents.json"
+    if not contents_path.exists():
         return None, {}
 
-    config = json.loads(sidebar_path.read_text(encoding="utf-8"))
+    config = json.loads(contents_path.read_text(encoding="utf-8"))
     for page in config.get("pages", []):
         file_name = page.get("file")
         if file_name in markdown_name_map:
@@ -167,24 +167,24 @@ def hash_sidebar_json(year_dir: Path, markdown_name_map: dict[str, str]) -> tupl
 
     content = json.dumps(config, ensure_ascii=False, indent=2) + "\n"
     digest = short_hash(content.encode("utf-8"))
-    hashed_filename = f"sidebar.{digest}.json"
-    hashed_path = sidebar_path.with_name(hashed_filename)
+    hashed_filename = f"contents.{digest}.json"
+    hashed_path = contents_path.with_name(hashed_filename)
     hashed_path.write_text(content, encoding="utf-8")
-    sidebar_path.unlink()
+    contents_path.unlink()
 
-    old_rel = sidebar_path.relative_to(year_dir).as_posix()
+    old_rel = contents_path.relative_to(year_dir).as_posix()
     new_rel = hashed_path.relative_to(year_dir).as_posix()
     return hashed_filename, {old_rel: new_rel}
 
 
-def rewrite_markdown_references(year_dir: Path, sidebar_hashed: str | None, markdown_name_map: dict[str, str]) -> None:
+def rewrite_markdown_references(year_dir: Path, contents_hashed: str | None, markdown_name_map: dict[str, str]) -> None:
     for html_path in year_dir.rglob("*.html"):
         text = html_path.read_text(encoding="utf-8")
         original = text
 
-        if sidebar_hashed:
-            text = text.replace("fetch('markdown/sidebar.json')", f"fetch('markdown/{sidebar_hashed}')")
-            text = text.replace('fetch("markdown/sidebar.json")', f'fetch("markdown/{sidebar_hashed}")')
+        if contents_hashed:
+            text = text.replace("fetch('markdown/contents.json')", f"fetch('markdown/{contents_hashed}')")
+            text = text.replace('fetch("markdown/contents.json")', f'fetch("markdown/{contents_hashed}")')
 
         for original_name, hashed_name_value in markdown_name_map.items():
             text = text.replace(f"'{original_name}'", f"'{hashed_name_value}'")
@@ -305,11 +305,11 @@ def process_year(year: str, root_map: dict[str, str]) -> None:
 
     global_map: dict[str, str] = {}
     markdown_name_map: dict[str, str] = {}
-    sidebar_hashed: str | None = None
+    contents_hashed: str | None = None
 
     if contains_markdown:
         markdown_name_map, markdown_path_map = hash_markdown_files(year_dir)
-        sidebar_hashed, sidebar_map = hash_sidebar_json(year_dir, markdown_name_map)
+        contents_hashed, sidebar_map = hash_contents_json(year_dir, markdown_name_map)
         global_map.update(markdown_path_map)
         global_map.update(sidebar_map)
 
@@ -325,7 +325,7 @@ def process_year(year: str, root_map: dict[str, str]) -> None:
         global_map["../styles.css"] = f"../{root_hashed_style}"
 
     if contains_markdown:
-        rewrite_markdown_references(year_dir, sidebar_hashed, markdown_name_map)
+        rewrite_markdown_references(year_dir, contents_hashed, markdown_name_map)
 
     rewrite_paths_in_text_files(year_dir, global_map, recursive=True)
 

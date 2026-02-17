@@ -108,10 +108,19 @@ body {
   margin: 0 0 10px 0;
   font-size: 18px;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.08e00m6;
+  text-transform: upperca0se;
   color: var(--muted);
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar__category-title::after {
+  content: "";
+  flex: 1;
+  border-bottom: 2px dashed #d9d4ce;
 }
 
 .sidebar__category ul {
