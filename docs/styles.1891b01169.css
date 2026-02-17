@@ -23,7 +23,7 @@ body {
     radial-gradient(circle at 88% 2%, #edf4f1 0%, transparent 50%),
     var(--bg);
   min-height: 100vh;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.45;
 }
 
@@ -55,7 +55,7 @@ body {
 .sidebar__logo {
   text-decoration: none;
   font-family: "Space Grotesk", sans-serif;
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--ink);
@@ -106,7 +106,7 @@ body {
 
 .sidebar__category-title {
   margin: 0 0 10px 0;
-  font-size: 11px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -133,7 +133,7 @@ body {
   text-decoration: none;
   color: var(--ink);
   border-radius: 0;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   transition: all 0.15s ease;
   border: 1px solid transparent;
@@ -181,7 +181,7 @@ body {
 
 .content h2 {
   margin: 36px 0 16px;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--ink);
@@ -189,7 +189,7 @@ body {
 
 .content h3 {
   margin: 24px 0 12px;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--ink);
@@ -264,7 +264,7 @@ body {
   width: 100%;
   border-collapse: collapse;
   margin: 0 0 16px;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .content table th,
@@ -376,7 +376,7 @@ body {
 }
 
 .hero__subtitle {
-  font-size: 15px;
+  font-size: 16px;
   margin: 0 0 8px;
   color: #3d3d3d;
   line-height: 1.6;
@@ -533,7 +533,7 @@ body {
 .card__subtitle {
   margin: 0;
   color: #3d3d3d;
-  font-size: 13px;
+  font-size: 18px;
 }
 
 .card__links {
@@ -549,7 +549,7 @@ body {
   text-decoration: none;
   color: var(--accent);
   font-weight: 500;
-  font-size: 13px;
+  font-size: 15px;
   transition: all 0.15s ease;
   border-left: 2px solid transparent;
   display: block;
@@ -564,7 +564,7 @@ body {
   margin-top: 48px;
   text-align: center;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .footer__en {
