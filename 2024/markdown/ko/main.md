@@ -4,7 +4,7 @@
 
 ## 대회 포스터
 
-![2024 OGC 포스터](2024/assets/poster.png)
+![2024 OGC 포스터](poster.png)
 
 ---
 

@@ -4,7 +4,7 @@
 
 ## Competition Poster
 
-![2024 OGC Poster](2024/assets/poster.png)
+![2024 OGC Poster](poster.png)
 
 ---
 
