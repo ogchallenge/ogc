@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>OGC2025</title>
+    <title>OGC2024</title>
     <meta
         name="description"
-        content="OGC2025 공식 안내 링크 모음 - 문제 설명, 제출 안내, 예선/본선/결선 정보"
-        data-desc-ko="OGC2025 공식 안내 링크 모음 - 문제 설명, 제출 안내, 예선/본선/결선 정보"
-        data-desc-en="OGC2025 official hub for problem details, submissions, and stage updates"
+        content="OGC2024 공식 안내 링크 모음 - 문제 설명, 제출 안내, 예선/본선/결선 정보"
+        data-desc-ko="OGC2024 공식 안내 링크 모음 - 문제 설명, 제출 안내, 예선/본선/결선 정보"
+        data-desc-en="OGC2024 official hub for problem details, submissions, and stage updates"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,9 +16,9 @@
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+KR:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
         rel="stylesheet"
     />
-    <link rel="stylesheet" href="../styles.0c7b0a4b37.css" />
+    <link rel="stylesheet" href="../styles.7ca9e01889.css" />
     <!-- Year-specific overrides (if needed) -->
-    <!-- <link rel="stylesheet" href="styles.05b9dcaf8e.css" />
+    <!-- <link rel="stylesheet" href="styles.5f6dc3dbac.css" />
     <!-- Highlight.js for syntax highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
     <!-- KaTeX for math rendering -->
@@ -34,8 +34,7 @@
     </script>
     <div class="layout">
         <aside class="sidebar">
-            <a href="#home" class="sidebar__logo">OGC2025</a>
-
+            <a href="#home" class="sidebar__logo">OGC2024</a>
             <nav class="sidebar__sections" id="sidebarSections"></nav>
         </aside>
 
@@ -44,14 +43,14 @@
                 <!-- Home page -->
                 <div id="home" class="page">
                     <header class="hero">
-                        <div class="hero__badge" data-lang="en">Optimization Grand Challenge 2025</div>
-                        <div class="hero__badge" data-lang="ko">2025 최적화 그랜드 챌린지</div>
-                        <h1 class="hero__title">OGC2025</h1>
+                        <div class="hero__badge" data-lang="en">Optimization Grand Challenge 2024</div>
+                        <div class="hero__badge" data-lang="ko">2024 최적화 그랜드 챌린지</div>
+                        <h1 class="hero__title">OGC2024</h1>
                         <p class="hero__subtitle" data-lang="ko">
-                            문제 설명, 알고리즘 제출, 예선/본선/결선 안내를 한 곳에 모았습니다.
+                            문제 설명, 알고리즘 제출, 예선/본선/결선 안내 및 결과를 조회할 수 있습니다.
                         </p>
                         <p class="hero__subtitle hero__subtitle--en" data-lang="en">
-                            A curated hub for problem details, submission instructions, and stage updates.
+                            An archive for problem details, submission instructions, and stage updates.
                         </p>
                     </header>
 
@@ -164,7 +163,7 @@
         let sidebarConfig = null;
 
         async function loadSidebarConfig() {
-            const response = await fetch('markdown/contents.4a716d9a87.json');
+            const response = await fetch('markdown/contents.afca7b1cd7.json');
             if (!response.ok) {
                 throw new Error(`Failed to load sidebar config: ${response.status}`);
             }
@@ -176,10 +175,10 @@
             // 메인 페이지 추가
             pages['main'] = {
                 title: {
-                    en: 'Optimization Grand Challenge 2025',
-                    ko: '최적화 그랜드 챌린지 2025'
+                    en: 'Optimization Grand Challenge 2024',
+                    ko: '최적화 그랜드 챌린지 2024'
                 },
-                file: 'main.29965456e7.md'
+                file: 'main.a3e3182493.md'
             };
             // sidebar config의 페이지들 추가
             (config.pages || []).forEach((page) => {
@@ -199,17 +198,10 @@
                 const wrapper = document.createElement('div');
                 wrapper.className = 'sidebar__category';
 
-                const titleEn = document.createElement('h3');
-                titleEn.className = 'sidebar__category-title';
-                titleEn.dataset.lang = 'en';
-                titleEn.textContent = section.title?.en || '';
-                wrapper.appendChild(titleEn);
-
-                const titleKo = document.createElement('h3');
-                titleKo.className = 'sidebar__category-title';
-                titleKo.dataset.lang = 'ko';
-                titleKo.textContent = section.title?.ko || '';
-                wrapper.appendChild(titleKo);
+                const title = document.createElement('h3');
+                title.className = 'sidebar__category-title';
+                title.textContent = language === 'en' ? (section.title?.en || '') : (section.title?.ko || '');
+                wrapper.appendChild(title);
 
                 const list = document.createElement('ul');
                 (section.items || []).forEach((pageId) => {
@@ -217,17 +209,10 @@
                     if (!page) return;
                     const item = document.createElement('li');
 
-                    const linkEn = document.createElement('a');
-                    linkEn.href = `#${pageId}`;
-                    linkEn.dataset.lang = 'en';
-                    linkEn.textContent = page.title?.en || pageId;
-                    item.appendChild(linkEn);
-
-                    const linkKo = document.createElement('a');
-                    linkKo.href = `#${pageId}`;
-                    linkKo.dataset.lang = 'ko';
-                    linkKo.textContent = page.title?.ko || pageId;
-                    item.appendChild(linkKo);
+                    const link = document.createElement('a');
+                    link.href = `#${pageId}`;
+                    link.textContent = language === 'en' ? (page.title?.en || pageId) : (page.title?.ko || pageId);
+                    item.appendChild(link);
 
                     list.appendChild(item);
                 });
@@ -305,9 +290,10 @@
                 if (nextDesc) metaDesc.setAttribute('content', nextDesc);
             }
             clearMarkdownCache();
-            // 언어 변경 후 sidebar 다시 렌더링
+            // 언어 변경 후 sidebar와 홈 섹션 다시 렌더링
             if (sidebarConfig) {
                 renderSidebar(sidebarConfig);
+                renderHomeSections(sidebarConfig);
             }
         }
 
@@ -432,16 +418,7 @@
             window.scrollTo(0, 0);
         }
 
-        // 홈 페이지로 돌아가기
-        function showHome() {
-            document.getElementById('home').style.display = 'block';
-            const contentPages = document.querySelectorAll('#content-pages > div');
-            contentPages.forEach(p => p.style.display = 'none');
-            document.title = 'OGC2025';
-            window.scrollTo(0, 0);
-        }
-
-        function navigateToHash(hash) {
+function navigateToHash(hash) {
             updateActiveNav(hash);
             if (!hash || hash === 'home') {
                 loadPage('main');
@@ -475,6 +452,69 @@
             });
         });
 
+        function initResponsiveSidebar() {
+            const layout = document.querySelector('.layout');
+            const sidebar = document.querySelector('.sidebar');
+            if (!layout || !sidebar) return;
+
+            const mobileQuery = window.matchMedia('(max-width: 980px)');
+
+            const toggleButton = document.createElement('button');
+            toggleButton.type = 'button';
+            toggleButton.className = 'sidebar-toggle-btn';
+            toggleButton.setAttribute('aria-label', 'Open sidebar');
+            toggleButton.setAttribute('aria-expanded', 'false');
+            toggleButton.innerHTML = '&#9776;';
+
+            const backdrop = document.createElement('div');
+            backdrop.className = 'sidebar-backdrop';
+
+            layout.appendChild(backdrop);
+            document.body.appendChild(toggleButton);
+
+            const closeSidebar = () => {
+                layout.classList.remove('sidebar-open');
+                toggleButton.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            };
+
+            const openSidebar = () => {
+                layout.classList.add('sidebar-open');
+                toggleButton.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            };
+
+            toggleButton.addEventListener('click', () => {
+                if (layout.classList.contains('sidebar-open')) {
+                    closeSidebar();
+                } else {
+                    openSidebar();
+                }
+            });
+
+            backdrop.addEventListener('click', closeSidebar);
+
+            sidebar.addEventListener('click', (event) => {
+                const link = event.target.closest('a[href^="#"]');
+                if (!link || !mobileQuery.matches) return;
+                closeSidebar();
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    closeSidebar();
+                }
+            });
+
+            mobileQuery.addEventListener('change', (event) => {
+                if (!event.matches) {
+                    closeSidebar();
+                }
+            });
+
+            closeSidebar();
+        }
+
 
 
         async function init() {
@@ -487,6 +527,7 @@
             } catch (error) {
                 console.error('Failed to load sidebar config:', error);
             }
+            initResponsiveSidebar();
             navigateToHash(window.location.hash.slice(1));
         }
 

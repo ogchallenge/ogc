@@ -452,6 +452,69 @@ function navigateToHash(hash) {
             });
         });
 
+        function initResponsiveSidebar() {
+            const layout = document.querySelector('.layout');
+            const sidebar = document.querySelector('.sidebar');
+            if (!layout || !sidebar) return;
+
+            const mobileQuery = window.matchMedia('(max-width: 980px)');
+
+            const toggleButton = document.createElement('button');
+            toggleButton.type = 'button';
+            toggleButton.className = 'sidebar-toggle-btn';
+            toggleButton.setAttribute('aria-label', 'Open sidebar');
+            toggleButton.setAttribute('aria-expanded', 'false');
+            toggleButton.innerHTML = '&#9776;';
+
+            const backdrop = document.createElement('div');
+            backdrop.className = 'sidebar-backdrop';
+
+            layout.appendChild(backdrop);
+            document.body.appendChild(toggleButton);
+
+            const closeSidebar = () => {
+                layout.classList.remove('sidebar-open');
+                toggleButton.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            };
+
+            const openSidebar = () => {
+                layout.classList.add('sidebar-open');
+                toggleButton.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            };
+
+            toggleButton.addEventListener('click', () => {
+                if (layout.classList.contains('sidebar-open')) {
+                    closeSidebar();
+                } else {
+                    openSidebar();
+                }
+            });
+
+            backdrop.addEventListener('click', closeSidebar);
+
+            sidebar.addEventListener('click', (event) => {
+                const link = event.target.closest('a[href^="#"]');
+                if (!link || !mobileQuery.matches) return;
+                closeSidebar();
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    closeSidebar();
+                }
+            });
+
+            mobileQuery.addEventListener('change', (event) => {
+                if (!event.matches) {
+                    closeSidebar();
+                }
+            });
+
+            closeSidebar();
+        }
+
 
 
         async function init() {
@@ -464,6 +527,7 @@ function navigateToHash(hash) {
             } catch (error) {
                 console.error('Failed to load sidebar config:', error);
             }
+            initResponsiveSidebar();
             navigateToHash(window.location.hash.slice(1));
         }
 

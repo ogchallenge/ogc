@@ -4,7 +4,7 @@ OGC(Optimization Grand Challenge) 연도별 안내 페이지를 정적 HTML로 �
 
 ## 📁 주요 구조
 
-- `index.96880a0834.html`, `styles.0c7b0a4b37.css`: 루트 포털 페이지
+- `index.96880a0834.html`, `styles.7ca9e01889.css`: 루트 포털 페이지
 - `2024/`, `2025/`, `2026/`: 연도별 소스
 - `build_dist.py`: 해시 기반 배포 파일 생성 스크립트
 - `file_hashing.txt`: 루트 해시 대상 설정
