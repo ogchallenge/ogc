@@ -67,6 +67,7 @@ release_assets/
 
 # >>> OGC release-managed ignore (auto) >>>
 # Generated from <year>/release.txt. Do not edit this block manually.
+2024/algorithms/*.zip
 2024/instances/test/*.zip
 2024/instances/train/*.zip
 # <<< OGC release-managed ignore (auto) <<<

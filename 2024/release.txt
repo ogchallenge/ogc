@@ -6,3 +6,5 @@
 
 instances/train/*.zip
 instances/test/*.zip
+
+algorithms/*.zip

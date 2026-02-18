@@ -59,47 +59,47 @@
 
 - DMS
     
-    [DMS.zip](algorithms/DMS.zip)
+    [DMS.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__DMS_v1.0.0.zip)
     
 - nodez
     
-    [nodez.zip](algorithms/nodez.zip)
+    [nodez.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__nodez_v1.0.0.zip)
     
 - OPTMATE
     
-    [OPTMATE.zip](algorithms/OPTMATE.zip)
+    [OPTMATE.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__OPTMATE_v1.0.0.zip)
     
 - PRO
     
-    [PRO.zip](algorithms/PRO.zip)
+    [PRO.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__PRO_v1.0.0.zip)
     
 - Slashe
     
-    [Slashe.zip](algorithms/Slashe.zip)
+    [Slashe.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__Slashe_v1.0.0.zip)
     
 - VIP
     
-    [VIP.zip](algorithms/VIP.zip)
+    [VIP.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__VIP_v1.0.0.zip)
     
 - Moon-SeonGyun
     
-    [Moon-SeonGyun.zip](algorithms/Moon-SeonGyun.zip)
+    [Moon-SeonGyun.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__Moon-SeonGyun_v1.0.0.zip)
     
 - 바른열정청년들
     
-    [바른열정청년들.zip](algorithms/Right-Passion-Youth.zip)
+    [바른열정청년들.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__Right-Passion-Youth_v1.0.0.zip)
     
 - Red-Moon
     
-    [Red-Moon.zip](algorithms/Red-Moon.zip)
+    [Red-Moon.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__Red-Moon_v1.0.0.zip)
     
 - Sky-Blue
     
-    [Sky-Blue.zip](algorithms/Sky-Blue.zip)
+    [Sky-Blue.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__Sky-Blue_v1.0.0.zip)
     
 
 # 3. Final Presentation Materials
 
 *(A single archive containing all teams' presentation files.)*
 
-[OGC2024_Presentation-Materials.zip](algorithms/OGC2024_Presentation-Materials.zip)
+[OGC2024_Presentation-Materials.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__OGC2024_Presentation-Materials_v1.0.0.zip)

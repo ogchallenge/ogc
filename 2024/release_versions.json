@@ -1,8 +1,85 @@
 {
   "schema": 1,
   "year": "2024",
-  "updated_at": "2026-02-18T22:34:18.522499+00:00",
+  "updated_at": "2026-02-18T22:43:44.120847+00:00",
   "files": {
+    "algorithms/DMS.zip": {
+      "version": "1.0.0",
+      "sha256": "4dca4af796d7197ad7ee018b1ecc43f09886db3c1e5841398d8485c87f5719a5",
+      "asset": "2024__algorithms__DMS_v1.0.0.zip",
+      "tag": "ogc-2024-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__DMS_v1.0.0.zip"
+    },
+    "algorithms/Moon-SeonGyun.zip": {
+      "version": "1.0.0",
+      "sha256": "e4b9a1ba47e68659bde64e0e95fe2870e19c6914443dc9aa914765a7ca9f5e3d",
+      "asset": "2024__algorithms__Moon-SeonGyun_v1.0.0.zip",
+      "tag": "ogc-2024-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__Moon-SeonGyun_v1.0.0.zip"
+    },
+    "algorithms/OGC2024_Presentation-Materials.zip": {
+      "version": "1.0.0",
+      "sha256": "551649ff1f338a138d0c691c0b8daff7f3907dc0490717f2c41d5c6eddf209f4",
+      "asset": "2024__algorithms__OGC2024_Presentation-Materials_v1.0.0.zip",
+      "tag": "ogc-2024-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__OGC2024_Presentation-Materials_v1.0.0.zip"
+    },
+    "algorithms/OPTMATE.zip": {
+      "version": "1.0.0",
+      "sha256": "2f13a9c8df1b4f62e85cfd330def860593d01f11491182bbd8d57ca494a804a1",
+      "asset": "2024__algorithms__OPTMATE_v1.0.0.zip",
+      "tag": "ogc-2024-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__OPTMATE_v1.0.0.zip"
+    },
+    "algorithms/PRO.zip": {
+      "version": "1.0.0",
+      "sha256": "2b9519d0dfd91da4c5523b46561062d7f53feb5689ab7123acf4066c3c4ed07f",
+      "asset": "2024__algorithms__PRO_v1.0.0.zip",
+      "tag": "ogc-2024-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__PRO_v1.0.0.zip"
+    },
+    "algorithms/Red-Moon.zip": {
+      "version": "1.0.0",
+      "sha256": "c47586d564403a687ebb4e8eca2ddfa267ae36590d2ec63f34fd2a1c8f5f152a",
+      "asset": "2024__algorithms__Red-Moon_v1.0.0.zip",
+      "tag": "ogc-2024-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__Red-Moon_v1.0.0.zip"
+    },
+    "algorithms/Right-Passion-Youth.zip": {
+      "version": "1.0.0",
+      "sha256": "89582b0e2f91098d8a75a5c4e8d197018004a992640c19d535277c0d5f2f8d74",
+      "asset": "2024__algorithms__Right-Passion-Youth_v1.0.0.zip",
+      "tag": "ogc-2024-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__Right-Passion-Youth_v1.0.0.zip"
+    },
+    "algorithms/Sky-Blue.zip": {
+      "version": "1.0.0",
+      "sha256": "6a38c0a6493f775764568ef50a90af7bd88a34c2b5468566a548f5d9b4e9d68e",
+      "asset": "2024__algorithms__Sky-Blue_v1.0.0.zip",
+      "tag": "ogc-2024-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__Sky-Blue_v1.0.0.zip"
+    },
+    "algorithms/Slashe.zip": {
+      "version": "1.0.0",
+      "sha256": "9a962dc75350c39b72b12678a64ec6ccadeed2e5bd8efb280d6ae06362f135b0",
+      "asset": "2024__algorithms__Slashe_v1.0.0.zip",
+      "tag": "ogc-2024-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__Slashe_v1.0.0.zip"
+    },
+    "algorithms/VIP.zip": {
+      "version": "1.0.0",
+      "sha256": "7a1ff877bad7cccee48e18d83ff26900b4cd5777b8f6872960b26c295664893f",
+      "asset": "2024__algorithms__VIP_v1.0.0.zip",
+      "tag": "ogc-2024-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__VIP_v1.0.0.zip"
+    },
+    "algorithms/nodez.zip": {
+      "version": "1.0.0",
+      "sha256": "c5ceea60df6025104ed7fc663e922040f88ea709574ba5030433ff1dfd23545c",
+      "asset": "2024__algorithms__nodez_v1.0.0.zip",
+      "tag": "ogc-2024-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__algorithms__nodez_v1.0.0.zip"
+    },
     "instances/test/STAGE1_TEST_1.json.zip": {
       "version": "1.0.0",
       "sha256": "9148e76f01f9c3085fa35a37e4c2f94a76efc614fad2cd8fe3fab81e4f4ea1e5",
