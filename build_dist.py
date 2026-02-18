@@ -198,6 +198,38 @@ def resolve_release_files(scope_dir: Path, targets: list[str]) -> set[Path]:
     return files
 
 
+def build_release_copy_exclusions() -> tuple[set[str], set[str]]:
+    excluded_dirs: set[str] = set()
+    excluded_files: set[str] = set()
+
+    for year in YEARS:
+        year_dir = ROOT / year
+        targets = read_release_targets(year_dir / RELEASE_CONFIG_FILENAME)
+
+        for target in targets:
+            normalized = target.replace("\\", "/").lstrip("/")
+            has_glob = any(ch in normalized for ch in "*?[")
+            if has_glob:
+                prefix_parts: list[str] = []
+                for part in normalized.split("/"):
+                    if any(ch in part for ch in "*?["):
+                        break
+                    prefix_parts.append(part)
+                if prefix_parts:
+                    excluded_dirs.add(f"{year}/{'/'.join(prefix_parts)}")
+                continue
+
+            candidate = year_dir / normalized
+            if candidate.is_dir():
+                excluded_dirs.add(candidate.relative_to(ROOT).as_posix())
+
+        matched_files = resolve_release_files(year_dir, targets)
+        for path in matched_files:
+            excluded_files.add(path.relative_to(ROOT).as_posix())
+
+    return excluded_dirs, excluded_files
+
+
 def parse_semver(version_text: str) -> tuple[int, int, int]:
     try:
         major, minor, patch = (int(part) for part in version_text.split("."))
@@ -515,9 +547,18 @@ def copy_source_to_dist() -> None:
         shutil.rmtree(DIST)
         print(f"[dist] Removed existing dist: {DIST.relative_to(ROOT).as_posix()}")
 
+    excluded_dirs, excluded_files = build_release_copy_exclusions()
+    print(
+        f"[dist] Release-copy exclusions prepared | "
+        f"dirs={len(excluded_dirs)} files={len(excluded_files)}"
+    )
+
     def _ignore(_dir: str, names: list[str]) -> set[str]:
+        current_dir = Path(_dir)
+        current_rel = current_dir.relative_to(ROOT).as_posix() if current_dir != ROOT else ""
         ignored = set()
         for name in names:
+            candidate_rel = f"{current_rel}/{name}" if current_rel else name
             if name in {
                 "dist",
                 "docs",
@@ -529,6 +570,10 @@ def copy_source_to_dist() -> None:
                 RELEASE_MANIFEST_FILENAME,
                 RELEASE_CONFIG_FILENAME,
             }:
+                ignored.add(name)
+                continue
+
+            if candidate_rel in excluded_dirs or candidate_rel in excluded_files:
                 ignored.add(name)
         return ignored
 
