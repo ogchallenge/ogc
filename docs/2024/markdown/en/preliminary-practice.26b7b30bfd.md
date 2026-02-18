@@ -6,7 +6,7 @@
 
 ## 1. Practice problem set
 
-[stage1_problems.zip](instances/train/stage1_problems.zip)
+[stage1_problems.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__train__stage1_problems_v0.0.1.zip)
 
 Download and unzip the file above to obtain 18 JSON files. Each JSON file is a practice instance for algorithm development. The 18 instances have different characteristics (number of orders, fixed costs, etc.). The public instances are derived from real order data and slightly processed for anonymization.
 

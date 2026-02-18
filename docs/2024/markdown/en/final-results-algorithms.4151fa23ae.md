@@ -4,43 +4,43 @@
 
 - P1 (timelimit=300s)
     
-    [STAGE3_TEST_1.json.zip](instances/test/STAGE3_TEST_1.json.zip)
+    [STAGE3_TEST_1.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_1.json_v0.0.1.zip)
     
 - P2 (timelimit=480s)
     
-    [STAGE3_TEST_2.json.zip](instances/test/STAGE3_TEST_2.json.zip)
+    [STAGE3_TEST_2.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_2.json_v0.0.1.zip)
     
 - P3 (timelimit=60s)
     
-    [STAGE3_TEST_3.json.zip](instances/test/STAGE3_TEST_3.json.zip)
+    [STAGE3_TEST_3.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_3.json_v0.0.1.zip)
     
 - P4 (timelimit=180s)
     
-    [STAGE3_TEST_4.json.zip](instances/test/STAGE3_TEST_4.json.zip)
+    [STAGE3_TEST_4.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_4.json_v0.0.1.zip)
     
 - P5 (timelimit=300s)
     
-    [STAGE3_TEST_5.json.zip](instances/test/STAGE3_TEST_5.json.zip)
+    [STAGE3_TEST_5.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_5.json_v0.0.1.zip)
     
 - P6 (timelimit=30s)
     
-    [STAGE3_TEST_6.json.zip](instances/test/STAGE3_TEST_6.json.zip)
+    [STAGE3_TEST_6.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_6.json_v0.0.1.zip)
     
 - P7 (timelimit=60s)
     
-    [STAGE3_TEST_7.json.zip](instances/test/STAGE3_TEST_7.json.zip)
+    [STAGE3_TEST_7.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_7.json_v0.0.1.zip)
     
 - P8 (timelimit=15s)
     
-    [STAGE3_TEST_8.json.zip](instances/test/STAGE3_TEST_8.json.zip)
+    [STAGE3_TEST_8.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_8.json_v0.0.1.zip)
     
 - P9 (timelimit=30s)
     
-    [STAGE3_TEST_9.json.zip](instances/test/STAGE3_TEST_9.json.zip)
+    [STAGE3_TEST_9.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_9.json_v0.0.1.zip)
     
 - P10 (timelimit=15s)
     
-    [STAGE3_TEST_10.json.zip](instances/test/STAGE3_TEST_10.json.zip)
+    [STAGE3_TEST_10.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_10.json_v0.0.1.zip)
     
 
 # 2. Finalists' Algorithm Code Submissions

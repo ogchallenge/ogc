@@ -63,9 +63,7 @@ Thumbs.db
 
 # Project specific
 _meta.json
-/ogc2024/  # Notion 백업 폴더는 제외 (필요시 주석)
-/2024/instances/train/stage3_problems.zip
-/docs/2024/instances/train/stage3_problems.zip
+release_assets/
 
 # >>> OGC release-managed ignore (auto) >>>
 # Generated from <year>/release.txt. Do not edit this block manually.
