@@ -1,0 +1,51 @@
+# Main Stage Results
+
+# Congratulations on advancing to the final stage!
+
+During the main stage, more than 400 algorithm submissions were made. Thank you for your enthusiastic participation. Based on the final leaderboard, 10 teams advance to the final stage.
+
+## OGC 2024 Final Stage Team List (Main Stage Scores)
+
+| Rank | Team | P1 | P2 | P3 | P4 | P5 | P6 | Total |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 바른열정청년들 | 37 | 36 | 37 | 36 | 37 | 37 | 220 |
+| 2 | DMS | 36 | 34 | 36 | 37 | 34 | 36 | 213 |
+| 3 | VIP | 33 | 33 | 35 | 34 | 35 | 35 | 205 |
+| 4 | Slashe | 35 | 35 | 33 | 33 | 31 | 33 | 200 |
+| 5 | PRO | 34 | 37 | 29 | 26 | 36 | 29 | 191 |
+| 5 | nodez | 30 | 29 | 30 | 35 | 33 | 34 | 191 |
+| 7 | 하늘청 | 26 | 32 | 32 | 32 | 32 | 32 | 186 |
+| 8 | 붉은달 | 31 | 31 | 31 | 31 | 29 | 30 | 183 |
+| 9 | OPTMATE | 32 | 30 | 34 | 30 | 28 | 27 | 181 |
+| 10 | 문선균 | 29 | 28 | 28 | 29 | 30 | 31 | 175 |
+
+# Main Stage Evaluation Instances
+
+- P1 (timelimit=180s)
+    
+    [STAGE2_TEST_1.json.zip](instances/test/STAGE2_TEST_1.json.zip)
+    
+- P2 (timelimit=300s)
+    
+    [STAGE2_TEST_2.json.zip](instances/test/STAGE2_TEST_2.json.zip)
+    
+- P3 (timelimit=60s)
+    
+    [STAGE2_TEST_3.json.zip](instances/test/STAGE2_TEST_3.json.zip)
+    
+- P4 (timelimit=60s)
+    
+    [STAGE2_TEST_4.json.zip](instances/test/STAGE2_TEST_4.json.zip)
+    
+- P5 (timelimit=120s)
+    
+    [STAGE2_TEST_5.json.zip](instances/test/STAGE2_TEST_5.json.zip)
+    
+- P6 (timelimit=180s)
+    
+    [STAGE2_TEST_6.json.zip](instances/test/STAGE2_TEST_6.json.zip)
+    
+
+# Main Stage Submission Dashboard
+
+[https://docs.google.com/spreadsheets/d/1K84RiO3JY-kWQ7Bv0mOzqP5Z2GU2HpampwXjxPvFh3M/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1K84RiO3JY-kWQ7Bv0mOzqP5Z2GU2HpampwXjxPvFh3M/edit?usp=sharing)

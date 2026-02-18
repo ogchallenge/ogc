@@ -1,0 +1,5 @@
+# GitHub Release에 업로드할 파일/폴더(2025 기준)
+# - 파일 예: instances/train/stage3_problems.zip
+# - 폴더 예: baselines
+# - 와일드카드 예: instances/test/*.zip
+# 주석/빈 줄은 무시됩니다.

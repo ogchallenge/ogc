@@ -1,0 +1,8 @@
+# Files or folders to hash for this year
+# - Wildcard example: *.html, *.css, assets/**/*.png
+# - Folder example: markdown
+# - File example: index.html
+
+*.html
+*.css
+markdown
