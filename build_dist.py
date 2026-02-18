@@ -21,6 +21,7 @@ RELEASE_MANIFEST_FILENAME = "release_manifest.json"
 RELEASE_CONFIG_FILENAME = "release.txt"
 GITIGNORE_MANAGED_START = "# >>> OGC release-managed ignore (auto) >>>"
 GITIGNORE_MANAGED_END = "# <<< OGC release-managed ignore (auto) <<<"
+INITIAL_RELEASE_VERSION = "1.0.0"
 
 
 def replace_path_token(text: str, old: str, new: str) -> str:
@@ -42,6 +43,7 @@ def hashed_name(filename: str, digest: str) -> str:
 
 
 def create_default_hashing_config() -> None:
+    print("[config] Ensuring default file_hashing.txt files")
     content = (
         "# Files or folders to hash for this scope\n"
         "# - Wildcard example: *.html, *.css, assets/**/*.png\n"
@@ -56,14 +58,17 @@ def create_default_hashing_config() -> None:
     root_config = ROOT / "file_hashing.txt"
     if not root_config.exists():
         root_config.write_text(content, encoding="utf-8")
+        print(f"[config] Created {root_config.relative_to(ROOT).as_posix()}")
 
     for year in YEARS:
         config_path = ROOT / year / "file_hashing.txt"
         if not config_path.exists():
             config_path.write_text(content, encoding="utf-8")
+            print(f"[config] Created {config_path.relative_to(ROOT).as_posix()}")
 
 
 def create_default_release_config() -> None:
+    print("[release] Ensuring default release.txt files")
     for year in YEARS:
         config_path = ROOT / year / RELEASE_CONFIG_FILENAME
         if config_path.exists():
@@ -76,6 +81,7 @@ def create_default_release_config() -> None:
             "# 주석/빈 줄은 무시됩니다.\n",
             encoding="utf-8",
         )
+        print(f"[release] Created {config_path.relative_to(ROOT).as_posix()}")
 
 
 def read_hash_targets(config_path: Path, default_targets: list[str]) -> list[str]:
@@ -142,10 +148,12 @@ def sync_release_gitignore() -> None:
         new_content = f"{block}\n"
 
     gitignore_path.write_text(new_content, encoding="utf-8")
+    print(f"[release] Synced managed block in {gitignore_path.relative_to(ROOT).as_posix()}")
 
 
 def remove_release_files_from_git_tracking() -> None:
     if shutil.which("git") is None:
+        print("[release] git not found. Skipping index cleanup.")
         return
 
     all_files: set[Path] = set()
@@ -155,6 +163,7 @@ def remove_release_files_from_git_tracking() -> None:
         all_files.update(resolve_release_files(year_dir, targets))
 
     if not all_files:
+        print("[release] No release targets found to untrack.")
         return
 
     rel_paths = [path.relative_to(ROOT).as_posix() for path in sorted(all_files)]
@@ -165,6 +174,7 @@ def remove_release_files_from_git_tracking() -> None:
         capture_output=True,
         text=True,
     )
+    print(f"[release] Requested untracking for {len(rel_paths)} release-target files")
 
 
 def resolve_release_files(scope_dir: Path, targets: list[str]) -> set[Path]:
@@ -199,6 +209,17 @@ def parse_semver(version_text: str) -> tuple[int, int, int]:
 def bump_patch(version_text: str) -> str:
     major, minor, patch = parse_semver(version_text)
     return f"{major}.{minor}.{patch + 1}"
+
+
+def resolve_release_version(previous: dict[str, str], digest: str) -> tuple[str, str]:
+    previous_version = str(previous.get("version", "")).strip()
+    previous_digest = previous.get("sha256")
+
+    if not previous_version:
+        return INITIAL_RELEASE_VERSION, "initial"
+    if previous_digest == digest:
+        return previous_version, "unchanged"
+    return bump_patch(previous_version), "changed"
 
 
 def sanitize_release_asset_stem(stem: str) -> str:
@@ -260,6 +281,10 @@ def write_release_upload_script(year: str, repo_slug: str, tag: str, asset_names
     script_path = assets_dir / "upload_release_assets.sh"
     script_path.write_text(script, encoding="utf-8")
     script_path.chmod(0o755)
+    print(
+        f"[release:{year}] Wrote upload helper: "
+        f"{script_path.relative_to(ROOT).as_posix()} ({len(asset_names)} assets)"
+    )
 
 
 def try_publish_release_assets(year: str, repo_slug: str, tag: str, asset_names: list[str], assets_dir: Path) -> None:
@@ -324,9 +349,12 @@ def try_publish_release_assets(year: str, repo_slug: str, tag: str, asset_names:
 def sync_release_assets(year: str, year_source_dir: Path, repo_slug: str | None) -> dict[str, str]:
     config_path = year_source_dir / RELEASE_CONFIG_FILENAME
     targets = read_release_targets(config_path)
+    print(f"[release:{year}] Loaded {len(targets)} release targets from {config_path.relative_to(ROOT).as_posix()}")
     release_files = sorted(resolve_release_files(year_source_dir, targets))
     if not release_files:
+        print(f"[release:{year}] No release files matched. Skipping release packaging.")
         return {}
+    print(f"[release:{year}] Matched {len(release_files)} files for release packaging")
 
     state_path = year_source_dir / RELEASE_STATE_FILENAME
     previous_state = {
@@ -345,24 +373,31 @@ def sync_release_assets(year: str, year_source_dir: Path, repo_slug: str | None)
     if assets_dir.exists():
         shutil.rmtree(assets_dir)
     assets_dir.mkdir(parents=True, exist_ok=True)
+    print(f"[release:{year}] Prepared assets directory: {assets_dir.relative_to(ROOT).as_posix()}")
 
     next_files: dict[str, dict[str, str]] = {}
     markdown_url_map: dict[str, str] = {}
-    asset_names: list[str] = []
+    changed_asset_names: list[str] = []
 
     for source_file in release_files:
         rel = source_file.relative_to(year_source_dir).as_posix()
         digest = hashlib.sha256(source_file.read_bytes()).hexdigest()
         previous = previous_files.get(rel, {})
-
-        if previous.get("sha256") == digest:
-            version = str(previous.get("version", "0.0.1"))
-        else:
-            version = bump_patch(str(previous.get("version", "0.0.0")))
+        version, version_reason = resolve_release_version(previous, digest)
 
         asset_name = build_release_asset_name(year, rel, version)
-        asset_names.append(asset_name)
-        shutil.copy2(source_file, assets_dir / asset_name)
+        if version_reason != "unchanged":
+            changed_asset_names.append(asset_name)
+            shutil.copy2(source_file, assets_dir / asset_name)
+            print(
+                f"[release:{year}] {rel} -> {asset_name} | "
+                f"version={version} ({version_reason}, upload=yes)"
+            )
+        else:
+            print(
+                f"[release:{year}] {rel} -> {asset_name} | "
+                f"version={version} ({version_reason}, upload=no)"
+            )
 
         url = build_release_url(repo_slug, tag, asset_name) if repo_slug else ""
 
@@ -384,6 +419,7 @@ def sync_release_assets(year: str, year_source_dir: Path, repo_slug: str | None)
         "files": next_files,
     }
     state_path.write_text(json.dumps(state_payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"[release:{year}] Wrote state: {state_path.relative_to(ROOT).as_posix()}")
 
     manifest_path = year_source_dir / RELEASE_MANIFEST_FILENAME
     manifest_payload = {
@@ -393,13 +429,21 @@ def sync_release_assets(year: str, year_source_dir: Path, repo_slug: str | None)
         "tag": tag,
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "assets_dir": assets_dir.relative_to(ROOT).as_posix(),
+        "changed_assets": changed_asset_names,
         "assets": list(next_files.values()),
     }
     manifest_path.write_text(json.dumps(manifest_payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"[release:{year}] Wrote manifest: {manifest_path.relative_to(ROOT).as_posix()}")
 
     if repo_slug:
-        write_release_upload_script(year, repo_slug, tag, asset_names, assets_dir)
-        try_publish_release_assets(year, repo_slug, tag, asset_names, assets_dir)
+        print(f"[release:{year}] Publishing enabled for repo: {repo_slug}")
+        if changed_asset_names:
+            write_release_upload_script(year, repo_slug, tag, changed_asset_names, assets_dir)
+            try_publish_release_assets(year, repo_slug, tag, changed_asset_names, assets_dir)
+        else:
+            print(f"[release:{year}] No changed assets. Skipping upload.")
+    else:
+        print(f"[release:{year}] Repo slug not found. Skipping upload and URL mapping.")
 
     return markdown_url_map
 
@@ -469,6 +513,7 @@ def resolve_target_files(year_dir: Path, targets: list[str]) -> set[Path]:
 def copy_source_to_dist() -> None:
     if DIST.exists():
         shutil.rmtree(DIST)
+        print(f"[dist] Removed existing dist: {DIST.relative_to(ROOT).as_posix()}")
 
     def _ignore(_dir: str, names: list[str]) -> set[str]:
         ignored = set()
@@ -488,6 +533,7 @@ def copy_source_to_dist() -> None:
         return ignored
 
     shutil.copytree(ROOT, DIST, ignore=_ignore)
+    print(f"[dist] Copied source tree to dist: {DIST.relative_to(ROOT).as_posix()}")
 
 
 def hash_markdown_files(year_dir: Path, release_url_map: dict[str, str]) -> tuple[dict[str, str], dict[str, str]]:
@@ -496,6 +542,7 @@ def hash_markdown_files(year_dir: Path, release_url_map: dict[str, str]) -> tupl
     ko_dir = markdown_dir / "ko"
 
     if not markdown_dir.exists():
+        print(f"[hash:{year_dir.name}] markdown directory not found. Skipping markdown hashing.")
         return {}, {}
 
     filenames = set()
@@ -518,6 +565,7 @@ def hash_markdown_files(year_dir: Path, release_url_map: dict[str, str]) -> tupl
             markdown_rel_dir = src.parent.relative_to(year_dir).as_posix()
             transformed = rewrite_release_links_in_markdown(text, markdown_rel_dir, release_url_map)
             transformed_content[(lang, filename)] = transformed
+    print(f"[hash:{year_dir.name}] Prepared transformed markdown content for {len(filenames)} files")
 
     name_map: dict[str, str] = {}
     path_map: dict[str, str] = {}
@@ -530,6 +578,7 @@ def hash_markdown_files(year_dir: Path, release_url_map: dict[str, str]) -> tupl
                 digest_source += transformed.encode("utf-8")
         digest = short_hash(digest_source)
         name_map[filename] = hashed_name(filename, digest)
+    print(f"[hash:{year_dir.name}] Generated markdown hash names for {len(name_map)} files")
 
     for lang in ("en", "ko"):
         lang_dir = markdown_dir / lang
@@ -546,12 +595,15 @@ def hash_markdown_files(year_dir: Path, release_url_map: dict[str, str]) -> tupl
                 dst_rel = dst.relative_to(year_dir).as_posix()
                 path_map[src_rel] = dst_rel
 
+    print(f"[hash:{year_dir.name}] Renamed markdown files: {len(path_map)}")
+
     return name_map, path_map
 
 
 def hash_contents_json(year_dir: Path, markdown_name_map: dict[str, str]) -> tuple[str | None, dict[str, str]]:
     contents_path = year_dir / "markdown" / "contents.json"
     if not contents_path.exists():
+        print(f"[hash:{year_dir.name}] contents.json not found. Skipping sidebar hashing.")
         return None, {}
 
     config = json.loads(contents_path.read_text(encoding="utf-8"))
@@ -566,6 +618,7 @@ def hash_contents_json(year_dir: Path, markdown_name_map: dict[str, str]) -> tup
     hashed_path = contents_path.with_name(hashed_filename)
     hashed_path.write_text(content, encoding="utf-8")
     contents_path.unlink()
+    print(f"[hash:{year_dir.name}] Hashed sidebar config -> {hashed_filename}")
 
     old_rel = contents_path.relative_to(year_dir).as_posix()
     new_rel = hashed_path.relative_to(year_dir).as_posix()
@@ -593,6 +646,11 @@ def hash_selected_files(scope_dir: Path, targets: list[str], skip_markdown_paths
     mapping: dict[str, str] = {}
     hashed_index_filename: str | None = None
 
+    print(
+        f"[hash:{scope_dir.name}] Hashing selected files | "
+        f"targets={targets} skip_markdown_paths={skip_markdown_paths}"
+    )
+
     for path in sorted(resolve_target_files(scope_dir, targets)):
         rel = path.relative_to(scope_dir).as_posix()
         if rel in {"file_hashing.txt", RELEASE_STATE_FILENAME, RELEASE_MANIFEST_FILENAME, RELEASE_CONFIG_FILENAME}:
@@ -611,11 +669,14 @@ def hash_selected_files(scope_dir: Path, targets: list[str], skip_markdown_paths
         if rel == "index.html":
             hashed_index_filename = new_name
 
+    print(f"[hash:{scope_dir.name}] Hashed {len(mapping)} files")
+
     return mapping, hashed_index_filename
 
 
 def rewrite_paths_in_text_files(scope_dir: Path, path_map: dict[str, str], recursive: bool) -> None:
     if not path_map:
+        print(f"[rewrite:{scope_dir.name}] No path mappings. Skipping text rewrite.")
         return
 
     ordered = sorted(path_map.items(), key=lambda item: len(item[0]), reverse=True)
@@ -653,6 +714,7 @@ def rewrite_paths_in_text_files(scope_dir: Path, path_map: dict[str, str], recur
 
         if text != original:
             path.write_text(text, encoding="utf-8")
+    print(f"[rewrite:{scope_dir.name}] Applied {len(path_map)} path mappings (recursive={recursive})")
 
 
 def build_parent_alias_map(path_map: dict[str, str]) -> dict[str, str]:
@@ -679,21 +741,27 @@ def create_index_loader(scope_dir: Path, hashed_index_filename: str) -> None:
         "</html>\n"
     )
     (scope_dir / "index.html").write_text(loader, encoding="utf-8")
+    print(f"[loader:{scope_dir.name}] index.html now redirects to {hashed_index_filename}")
 
 
 def process_root() -> dict[str, str]:
+    print("[root] Processing root hashing and rewrites")
     targets = read_hash_targets(ROOT / "file_hashing.txt", DEFAULT_ROOT_HASH_TARGETS)
     selected_map, hashed_index_filename = hash_selected_files(DIST, targets, skip_markdown_paths=False)
     rewrite_paths_in_text_files(DIST, selected_map, recursive=False)
     if hashed_index_filename:
         create_index_loader(DIST, hashed_index_filename)
+    print(f"[root] Completed with {len(selected_map)} mapped files")
     return selected_map
 
 
 def process_year(year: str, root_map: dict[str, str]) -> None:
     year_dir = DIST / year
     if not year_dir.exists():
+        print(f"[year:{year}] Directory not found in dist. Skipping.")
         return
+
+    print(f"[year:{year}] Start processing")
 
     source_year_dir = ROOT / year
     repo_slug = get_github_repo_slug()
@@ -730,9 +798,11 @@ def process_year(year: str, root_map: dict[str, str]) -> None:
 
     if hashed_index_filename:
         create_index_loader(year_dir, hashed_index_filename)
+    print(f"[year:{year}] Completed | mapped_paths={len(global_map)}")
 
 
 def build_dist() -> None:
+    print("[build] Build started")
     create_default_hashing_config()
     create_default_release_config()
     sync_release_gitignore()
@@ -741,6 +811,7 @@ def build_dist() -> None:
     root_map = process_root()
     for year in YEARS:
         process_year(year, root_map)
+    print("[build] Build finished")
 
 
 def main() -> None:

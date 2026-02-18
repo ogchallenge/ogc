@@ -18,7 +18,7 @@
     },
     {
       "id": "preliminary-practice",
-      "file": "preliminary-practice.26b7b30bfd.md",
+      "file": "preliminary-practice.ebcbc7f6e1.md",
       "title": {
         "en": "Preliminary Practice Problems",
         "ko": "예선 연습 문제 및 평가 안내"
@@ -26,7 +26,7 @@
     },
     {
       "id": "preliminary-results",
-      "file": "preliminary-results.684b25e4cd.md",
+      "file": "preliminary-results.be11e7460f.md",
       "title": {
         "en": "Preliminary Results",
         "ko": "예선 결과"
@@ -34,7 +34,7 @@
     },
     {
       "id": "main-practice",
-      "file": "main-practice.6df9aff658.md",
+      "file": "main-practice.7bcb4b5bb6.md",
       "title": {
         "en": "Main Stage Practice Problems",
         "ko": "본선 연습 문제 및 평가 안내"
@@ -42,7 +42,7 @@
     },
     {
       "id": "main-results",
-      "file": "main-results.d8ff875eea.md",
+      "file": "main-results.bd2b719f62.md",
       "title": {
         "en": "Main Stage Results",
         "ko": "본선 결과"
@@ -50,7 +50,7 @@
     },
     {
       "id": "final-practice",
-      "file": "final-practice.a431b47054.md",
+      "file": "final-practice.d8d4a5969b.md",
       "title": {
         "en": "Final Practice Problems",
         "ko": "결선 연습 문제 및 평가 안내"
@@ -66,7 +66,7 @@
     },
     {
       "id": "final-results-algorithms",
-      "file": "final-results-algorithms.4151fa23ae.md",
+      "file": "final-results-algorithms.491726f8c0.md",
       "title": {
         "en": "Final Results & Algorithms",
         "ko": "결선 결과 및 알고리즘 공개"

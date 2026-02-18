@@ -53,15 +53,15 @@ During the preliminary stage, more than 1,400 algorithm submissions were made. T
 
 - P1 (timelimit=60s)
     
-    [STAGE1_TEST_1.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE1_TEST_1.json_v0.0.1.zip)
+    [STAGE1_TEST_1.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE1_TEST_1.json_v1.0.0.zip)
     
 - P2 (timelimit=60s)
     
-    [STAGE1_TEST_2.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE1_TEST_2.json_v0.0.1.zip)
+    [STAGE1_TEST_2.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE1_TEST_2.json_v1.0.0.zip)
     
 - P3 (timelimit=60s)
     
-    [STAGE1_TEST_3.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE1_TEST_3.json_v0.0.1.zip)
+    [STAGE1_TEST_3.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE1_TEST_3.json_v1.0.0.zip)
     
 
 # Preliminary Submission Dashboard

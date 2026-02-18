@@ -23,27 +23,27 @@ During the main stage, more than 400 algorithm submissions were made. Thank you 
 
 - P1 (timelimit=180s)
     
-    [STAGE2_TEST_1.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_1.json_v0.0.1.zip)
+    [STAGE2_TEST_1.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_1.json_v1.0.0.zip)
     
 - P2 (timelimit=300s)
     
-    [STAGE2_TEST_2.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_2.json_v0.0.1.zip)
+    [STAGE2_TEST_2.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_2.json_v1.0.0.zip)
     
 - P3 (timelimit=60s)
     
-    [STAGE2_TEST_3.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_3.json_v0.0.1.zip)
+    [STAGE2_TEST_3.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_3.json_v1.0.0.zip)
     
 - P4 (timelimit=60s)
     
-    [STAGE2_TEST_4.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_4.json_v0.0.1.zip)
+    [STAGE2_TEST_4.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_4.json_v1.0.0.zip)
     
 - P5 (timelimit=120s)
     
-    [STAGE2_TEST_5.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_5.json_v0.0.1.zip)
+    [STAGE2_TEST_5.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_5.json_v1.0.0.zip)
     
 - P6 (timelimit=180s)
     
-    [STAGE2_TEST_6.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_6.json_v0.0.1.zip)
+    [STAGE2_TEST_6.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_6.json_v1.0.0.zip)
     
 
 # Main Stage Submission Dashboard

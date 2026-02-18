@@ -1,161 +1,161 @@
 {
   "schema": 1,
   "year": "2024",
-  "updated_at": "2026-02-18T22:03:16.867030+00:00",
+  "updated_at": "2026-02-18T22:34:18.522499+00:00",
   "files": {
     "instances/test/STAGE1_TEST_1.json.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "9148e76f01f9c3085fa35a37e4c2f94a76efc614fad2cd8fe3fab81e4f4ea1e5",
-      "asset": "2024__instances__test__STAGE1_TEST_1.json_v0.0.1.zip",
+      "asset": "2024__instances__test__STAGE1_TEST_1.json_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE1_TEST_1.json_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE1_TEST_1.json_v1.0.0.zip"
     },
     "instances/test/STAGE1_TEST_2.json.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "bf4e4b5b61d1acabca48372b718436abd1ae5a0f025692ef8938ab9680e2641e",
-      "asset": "2024__instances__test__STAGE1_TEST_2.json_v0.0.1.zip",
+      "asset": "2024__instances__test__STAGE1_TEST_2.json_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE1_TEST_2.json_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE1_TEST_2.json_v1.0.0.zip"
     },
     "instances/test/STAGE1_TEST_3.json.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "1c7e9b84ea88e533e3296c9f745cc5285fb317205916bf8fe2b0a8c4daa8af11",
-      "asset": "2024__instances__test__STAGE1_TEST_3.json_v0.0.1.zip",
+      "asset": "2024__instances__test__STAGE1_TEST_3.json_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE1_TEST_3.json_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE1_TEST_3.json_v1.0.0.zip"
     },
     "instances/test/STAGE2_TEST_1.json.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "f642ace0712f8610183cbe38c580019b3173a05fa318f432f5539b6e2dc35d7c",
-      "asset": "2024__instances__test__STAGE2_TEST_1.json_v0.0.1.zip",
+      "asset": "2024__instances__test__STAGE2_TEST_1.json_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_1.json_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_1.json_v1.0.0.zip"
     },
     "instances/test/STAGE2_TEST_2.json.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "187c70e53f90ced1f21f8ec49a690f6a280a60b7762b5fa5cceddeca9436f72e",
-      "asset": "2024__instances__test__STAGE2_TEST_2.json_v0.0.1.zip",
+      "asset": "2024__instances__test__STAGE2_TEST_2.json_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_2.json_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_2.json_v1.0.0.zip"
     },
     "instances/test/STAGE2_TEST_3.json.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "e24d0beba310bcf284b6ec52f01390cd42178a959d179cb21df7c799ae5261d4",
-      "asset": "2024__instances__test__STAGE2_TEST_3.json_v0.0.1.zip",
+      "asset": "2024__instances__test__STAGE2_TEST_3.json_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_3.json_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_3.json_v1.0.0.zip"
     },
     "instances/test/STAGE2_TEST_4.json.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "a72431cf68f0c555b25fe89c52aa78db841b7f8835f3f9830ac68a705018ceeb",
-      "asset": "2024__instances__test__STAGE2_TEST_4.json_v0.0.1.zip",
+      "asset": "2024__instances__test__STAGE2_TEST_4.json_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_4.json_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_4.json_v1.0.0.zip"
     },
     "instances/test/STAGE2_TEST_5.json.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "86fbe3de2f4b816ffbf8847263f04977ddf19c8f785253e61499f5c062a6f460",
-      "asset": "2024__instances__test__STAGE2_TEST_5.json_v0.0.1.zip",
+      "asset": "2024__instances__test__STAGE2_TEST_5.json_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_5.json_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_5.json_v1.0.0.zip"
     },
     "instances/test/STAGE2_TEST_6.json.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "c2bb247128bf8754db908747c036a26fea32b8bf72460192581f97312ad70742",
-      "asset": "2024__instances__test__STAGE2_TEST_6.json_v0.0.1.zip",
+      "asset": "2024__instances__test__STAGE2_TEST_6.json_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_6.json_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_6.json_v1.0.0.zip"
     },
     "instances/test/STAGE3_TEST_1.json.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "b8d33ae44996180afaac42eaf1eb5955ce76e1979e7736cae117d444ab4f117b",
-      "asset": "2024__instances__test__STAGE3_TEST_1.json_v0.0.1.zip",
+      "asset": "2024__instances__test__STAGE3_TEST_1.json_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_1.json_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_1.json_v1.0.0.zip"
     },
     "instances/test/STAGE3_TEST_10.json.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "17e425371d760ae5897a89a83ef6161b1da4edd5e0750fd1196dbe400e063b69",
-      "asset": "2024__instances__test__STAGE3_TEST_10.json_v0.0.1.zip",
+      "asset": "2024__instances__test__STAGE3_TEST_10.json_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_10.json_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_10.json_v1.0.0.zip"
     },
     "instances/test/STAGE3_TEST_2.json.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "c409a72fee62de2eb01670119a7e9a5e966b05c20eab21f8b0ab8dccca1f762f",
-      "asset": "2024__instances__test__STAGE3_TEST_2.json_v0.0.1.zip",
+      "asset": "2024__instances__test__STAGE3_TEST_2.json_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_2.json_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_2.json_v1.0.0.zip"
     },
     "instances/test/STAGE3_TEST_3.json.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "0e3968c0f1c2a45592f58f1499ac7583015b2718744b3598aa4296a44a633ed4",
-      "asset": "2024__instances__test__STAGE3_TEST_3.json_v0.0.1.zip",
+      "asset": "2024__instances__test__STAGE3_TEST_3.json_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_3.json_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_3.json_v1.0.0.zip"
     },
     "instances/test/STAGE3_TEST_4.json.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "0d51df3b3dc942408c5cf4bf10dc87fae8fc1f6c2a8eb2ae22203a5a619e072d",
-      "asset": "2024__instances__test__STAGE3_TEST_4.json_v0.0.1.zip",
+      "asset": "2024__instances__test__STAGE3_TEST_4.json_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_4.json_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_4.json_v1.0.0.zip"
     },
     "instances/test/STAGE3_TEST_5.json.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "7dad9466e037ea2d929035b24473649930a63076289b3e65c83964a999aca7e6",
-      "asset": "2024__instances__test__STAGE3_TEST_5.json_v0.0.1.zip",
+      "asset": "2024__instances__test__STAGE3_TEST_5.json_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_5.json_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_5.json_v1.0.0.zip"
     },
     "instances/test/STAGE3_TEST_6.json.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "67ab0f276909d16fd43dbc55c751e40ff87c6ba9e3282291f6e0e247faaf583e",
-      "asset": "2024__instances__test__STAGE3_TEST_6.json_v0.0.1.zip",
+      "asset": "2024__instances__test__STAGE3_TEST_6.json_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_6.json_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_6.json_v1.0.0.zip"
     },
     "instances/test/STAGE3_TEST_7.json.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "255ee3d589f02cd34c7748ddfbac619c90d6d4cc958290eb8601b10f236dbea8",
-      "asset": "2024__instances__test__STAGE3_TEST_7.json_v0.0.1.zip",
+      "asset": "2024__instances__test__STAGE3_TEST_7.json_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_7.json_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_7.json_v1.0.0.zip"
     },
     "instances/test/STAGE3_TEST_8.json.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "22f4b98dedcaa4a67d4a3d055204b519e6448bc3e930fa43e5e6105580c111c0",
-      "asset": "2024__instances__test__STAGE3_TEST_8.json_v0.0.1.zip",
+      "asset": "2024__instances__test__STAGE3_TEST_8.json_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_8.json_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_8.json_v1.0.0.zip"
     },
     "instances/test/STAGE3_TEST_9.json.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "fa3744fd30e78584ba7590fc0102798080e18cd94044ef7ed7f1b23a8f169813",
-      "asset": "2024__instances__test__STAGE3_TEST_9.json_v0.0.1.zip",
+      "asset": "2024__instances__test__STAGE3_TEST_9.json_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_9.json_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE3_TEST_9.json_v1.0.0.zip"
     },
     "instances/train/stage1_problems.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "10bfac852eb0395dd7fc799dc2acecb6234bff7cb976d3d573bb3970691cf160",
-      "asset": "2024__instances__train__stage1_problems_v0.0.1.zip",
+      "asset": "2024__instances__train__stage1_problems_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__train__stage1_problems_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__train__stage1_problems_v1.0.0.zip"
     },
     "instances/train/stage2_problems.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "a912e43128167aa7d6e25acee46cfcbc5a91a09a660ba561da8362d8073e8323",
-      "asset": "2024__instances__train__stage2_problems_v0.0.1.zip",
+      "asset": "2024__instances__train__stage2_problems_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__train__stage2_problems_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__train__stage2_problems_v1.0.0.zip"
     },
     "instances/train/stage3_problems.zip": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "sha256": "56d1734c4928a258d26e070e5bb95422959a8a1fa50447e6453f2a9c6cac8c74",
-      "asset": "2024__instances__train__stage3_problems_v0.0.1.zip",
+      "asset": "2024__instances__train__stage3_problems_v1.0.0.zip",
       "tag": "ogc-2024-assets",
-      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__train__stage3_problems_v0.0.1.zip"
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__train__stage3_problems_v1.0.0.zip"
     }
   }
 }
