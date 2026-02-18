@@ -8,24 +8,27 @@ OGC(Optimization Grand Challenge) 연도별 안내 페이지를 정적 HTML로 �
 - `2024/`, `2025/`, `2026/`: 연도별 소스
 - `build_dist.py`: 해시 기반 배포 파일 생성 스크립트
 - `file_hashing.txt`: 루트 해시 대상 설정
-- `2024/file_hashing.txt` (연도별 동일): 연도 해시 대상 설정
-- `2024/release.txt` (연도별 동일): GitHub Release 업로드 대상 설정
-- `2024/release_versions.json` (연도별 자동 생성): 파일별 버전/해시 기록
+- `<year>/file_hashing.txt`: 연도별 해시 대상 설정
+- `<year>/release.txt`: GitHub Release 업로드 대상 설정
+- `<year>/release_versions.json` (자동 생성): 파일별 버전/해시 기록
+- `<year>/release_manifest.json` (자동 생성): 릴리즈 매핑/변경 파일 기록
 - `release_assets/<year>/` (자동 생성): GitHub Release 업로드용 에셋 산출물
 - `docs/`: GitHub Pages 배포용 산출물(자동 생성)
 
-## 🚀 로컬에서 실행하기
+## ⚙️ 핵심 설정 파일 상세
 
-### 파일명 해시 기반 docs 빌드
+아래 3개 파일이 빌드/배포 동작을 결정합니다.
 
-```bash
-cd webpage
-python3 build_dist.py
-```
+### 1) `file_hashing.txt`
 
-루트 폴더와 각 연도 폴더의 `file_hashing.txt`에 해시 대상을 지정할 수 있습니다.
+해시 파일명으로 변환할 대상을 정의합니다. 루트용 1개, 연도별(`2024/`, `2025/`, `2026/`) 1개씩 존재합니다.
 
-기본값:
+- 지원 형식
+  - 파일: `index.html`
+  - 폴더: `markdown`
+  - 와일드카드: `*.html`, `assets/**/*.png`
+- 주석(`#`)과 빈 줄은 무시됩니다.
+- 기본값(파일이 없을 때 자동 생성):
 
 ```txt
 *.html
@@ -33,38 +36,123 @@ python3 build_dist.py
 markdown
 ```
 
-빌드가 완료되면 `docs/` 폴더가 생성되며, 지정된 대상 파일/폴더는 해시가 포함된 파일명으로 생성됩니다.
-연도별 `index.html`이 해시 대상인 경우, `docs/<year>/index.html`은 해시된 HTML로 리다이렉트하는 로더로 유지됩니다.
-루트 `index.html`이 해시 대상인 경우에도 동일하게 `docs/index.html`은 해시된 HTML로 리다이렉트하는 로더를 유지합니다.
+동작 요약:
 
-### 간단한 웹서버로 테스트
+- 지정된 파일은 `name.<hash>.ext` 형태로 변경됩니다.
+- `index.html`이 해시 대상이면 `docs/index.html`(또는 `docs/<year>/index.html`)은 해시된 실제 파일로 redirect하는 로더로 유지됩니다.
+
+### 2) `release.txt`
+
+GitHub Release로 배포할 원본 파일/폴더를 정의합니다. `build_dist.py`는 이 목록을 기준으로 릴리즈 자산을 생성하고 링크를 치환합니다.
+
+- 지원 형식
+  - 파일: `instances/train/stage3_problems.zip`
+  - 폴더: `baselines`
+  - 와일드카드: `instances/**/*.zip`, `algorithms/*.zip`
+- 주석(`#`)과 빈 줄은 무시됩니다.
+- `*`는 현재 경로 레벨 기준, 하위 폴더 재귀 포함은 `**` 사용
+  - 예: `instances/**/*.zip`
+
+예시(`2024/release.txt`):
+
+```txt
+instances/**/*.zip
+algorithms/*.zip
+```
+
+빌드 시 동작:
+
+1. `release.txt`에 정의된 파일 집합을 수집
+2. `docs/` 복사 단계에서 해당 파일/폴더 제외
+3. GitHub Release 업로드 대상 자산(`release_assets/<year>/`) 생성
+4. 마크다운 내 상대 링크를 release URL로 자동 치환
+
+### 3) `contents.json`
+
+연도별 마크다운 네비게이션 구조를 정의하는 파일입니다. 위치는 `<year>/markdown/contents.json`입니다.
+
+주요 필드:
+
+- `pages`: 실제 문서 목록
+  - `id`: 페이지 식별자(해시 라우팅 키)
+  - `file`: 마크다운 파일명
+  - `title`: `{ "ko": "...", "en": "..." }`
+- `sections`: 사이드바 그룹
+  - `title`: 섹션 제목(ko/en)
+  - `items`: `pages[].id` 배열
+
+간단 예시:
+
+```json
+{
+  "pages": [
+    {
+      "id": "main",
+      "file": "main.md",
+      "title": { "ko": "메인", "en": "Main" }
+    }
+  ],
+  "sections": [
+    {
+      "title": { "ko": "안내", "en": "Guide" },
+      "items": ["main"]
+    }
+  ]
+}
+```
+
+빌드 시 `contents.json`도 해시 파일명(`contents.<hash>.json`)으로 변환되며, HTML의 fetch 경로가 자동으로 갱신됩니다.
+
+## 📦 GitHub Release 버전 규칙
+
+릴리즈 대상 파일의 버전은 `<year>/release_versions.json`으로 관리됩니다.
+
+- 최초 감지 파일: `1.0.0`
+- 내용 동일(SHA-256 동일): 버전 유지, 업로드 생략
+- 내용 변경(SHA-256 변경): patch `+0.0.1` 증가, 변경 파일만 업로드
+
+예:
+
+- `1.0.0` → `1.0.1`
+- `1.0.1` → `1.0.2`
+
+`<year>/release_manifest.json`에는 `changed_assets`(이번 빌드에서 실제 업로드 대상)와 전체 자산 매핑이 기록됩니다.
+
+## 🚀 로컬 빌드/실행
+
+### docs 빌드
+
+```bash
+cd webpage
+python3 build_dist.py
+```
+
+### 간단한 웹서버 테스트
 
 ```bash
 cd webpage
 python3 -m http.server 8000
 ```
 
-브라우저에서 `http://localhost:8000` 으로 접속하면 됩니다.
+브라우저에서 `http://localhost:8000` 접속
 
-### Node.js HTTP 서버 사용
+### Node.js HTTP 서버
 
 ```bash
 cd webpage
 npx http-server -p 8000
 ```
 
-## 🌐 GitHub Pages에 배포하기
+## 🌐 GitHub Pages 배포
 
 `main` 브랜치의 `docs/` 폴더를 Source로 사용합니다.
 
-### 설정 및 배포
-
-1. GitHub 저장소에 `webpage` 전체를 push합니다.
-2. GitHub 저장소 Settings → Pages에서 다음처럼 설정합니다.
-  - Source: `Deploy from a branch`
-  - Branch: `main`
-  - Folder: `/docs`
-3. 로컬에서 배포 산출물을 생성합니다.
+1. 저장소에 `webpage` 전체 push
+2. GitHub Settings → Pages
+   - Source: `Deploy from a branch`
+   - Branch: `main`
+   - Folder: `/docs`
+3. 로컬에서 배포 산출물 생성 및 push
 
 ```bash
 cd webpage
@@ -74,60 +162,6 @@ git commit -m "Update docs for GitHub Pages"
 git push
 ```
 
-4. 약 1-2분 후 Pages URL에서 사이트를 확인합니다.
-
-## 🔄 콘텐츠 업데이트
-
-연도별 마크다운/스타일/HTML을 수정한 후:
-
-```bash
-python3 build_dist.py
-```
-
-명령어로 해시 기반 배포 파일(`docs/`)을 자동 재생성할 수 있습니다.
-
-## 📦 GitHub Release 연동
-
-각 연도 폴더(`2024/`, `2025/`, `2026/`)의 `release.txt`에 업로드 대상 파일/폴더를 지정합니다.
-
-예시 (`2024/release.txt`):
-
-```txt
-instances/train/stage3_problems.zip
-baselines
-instances/test/*.zip
-```
-
-`python3 build_dist.py` 실행 시:
-
-1. `release.txt` 대상 파일을 수집합니다.
-2. 파일 내용(SHA-256)을 기준으로 버전을 관리합니다.
-  - 변경 없음: 기존 버전 유지
-  - 내용 변경: patch 버전 `0.0.1`씩 증가 (예: `0.0.3` → `0.0.4`)
-3. 업로드용 파일을 `release_assets/<year>/`에 생성합니다.
-4. 파일별 URL을 GitHub Release 다운로드 URL로 계산하고,
-  해당 파일을 가리키는 마크다운 링크를 자동 치환합니다.
-5. 상태 파일 `release_versions.json`, 매니페스트 `release_manifest.json`을 갱신합니다.
-
-`release_assets/<year>/upload_release_assets.sh` 스크립트를 사용하면 `gh` CLI로 업로드할 수 있습니다.
-
-
-
-## 🎨 기술 스택
-
-- **HTML5**: 시맨틱 HTML
-- **CSS3**: 모던 CSS (CSS Grid, Flexbox)
-- **Python**: 마크다운 → HTML 변환 (markdown2)
-- **GitHub Pages**: 호스팅
-
-## ✨ 특징
-
-- 📱 완전 반응형 디자인 (모바일/태블릿/데스크톱)
-- 🎯 깔끔하고 현대적인 UI
-- 🗂️ 사이드바 네비게이션으로 쉬운 이동
-- 🚀 정적 사이트라 빠른 로딩
-- ♿ 접근성을 고려한 설계
-
 ## 📝 라이선스
 
-OGC2024 공식 콘텐츠를 기반으로 제작되었습니다.
+OGC 공식 콘텐츠를 기반으로 제작되었습니다.

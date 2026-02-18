@@ -444,28 +444,33 @@ def sync_release_assets(year: str, year_source_dir: Path, repo_slug: str | None)
         if url:
             markdown_url_map[rel] = url
 
-    state_payload = {
-        "schema": 1,
-        "year": year,
-        "updated_at": datetime.now(timezone.utc).isoformat(),
-        "files": next_files,
-    }
-    state_path.write_text(json.dumps(state_payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"[release:{year}] Wrote state: {state_path.relative_to(ROOT).as_posix()}")
-
     manifest_path = year_source_dir / RELEASE_MANIFEST_FILENAME
-    manifest_payload = {
-        "schema": 1,
-        "repo": repo_slug,
-        "year": year,
-        "tag": tag,
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-        "assets_dir": assets_dir.relative_to(ROOT).as_posix(),
-        "changed_assets": changed_asset_names,
-        "assets": list(next_files.values()),
-    }
-    manifest_path.write_text(json.dumps(manifest_payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"[release:{year}] Wrote manifest: {manifest_path.relative_to(ROOT).as_posix()}")
+    should_update_metadata = bool(changed_asset_names) or (not state_path.exists()) or (not manifest_path.exists())
+
+    if should_update_metadata:
+        state_payload = {
+            "schema": 1,
+            "year": year,
+            "updated_at": datetime.now(timezone.utc).isoformat(),
+            "files": next_files,
+        }
+        state_path.write_text(json.dumps(state_payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"[release:{year}] Wrote state: {state_path.relative_to(ROOT).as_posix()}")
+
+        manifest_payload = {
+            "schema": 1,
+            "repo": repo_slug,
+            "year": year,
+            "tag": tag,
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "assets_dir": assets_dir.relative_to(ROOT).as_posix(),
+            "changed_assets": changed_asset_names,
+            "assets": list(next_files.values()),
+        }
+        manifest_path.write_text(json.dumps(manifest_payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"[release:{year}] Wrote manifest: {manifest_path.relative_to(ROOT).as_posix()}")
+    else:
+        print(f"[release:{year}] No changed release files. Skipping state/manifest update.")
 
     if repo_slug:
         print(f"[release:{year}] Publishing enabled for repo: {repo_slug}")
