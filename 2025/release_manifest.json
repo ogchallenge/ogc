@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "repo": "ogchallenge/ogc",
+  "year": "2025",
+  "tag": "ogc-2025-assets",
+  "generated_at": "2026-02-19T11:25:01.052785+00:00",
+  "assets_dir": "release_assets/2025",
+  "changed_assets": [
+    "2025_algorithms_081F38_v1.0.0.zip",
+    "2025_algorithms_12HUB2_v1.0.0.zip",
+    "2025_algorithms_300_v1.0.0.zip",
+    "2025_algorithms_FAST_v1.0.0.zip",
+    "2025_algorithms_FORRORO_v1.0.0.zip",
+    "2025_algorithms_NormalDeck_v1.0.0.zip",
+    "2025_algorithms_Wirtz_v1.0.0.zip",
+    "2025_algorithms_tryAgain_v1.0.0.zip",
+    "2025_algorithms_uc784uc2dcuac1cubc1c_v1.0.0.zip",
+    "2025_algorithms_uc801uc7acuc801uc18c_v1.0.0.zip",
+    "2025_instances_test_stage1_problems_v1.0.0.zip",
+    "2025_instances_test_stage2_problems_v1.0.0.zip",
+    "2025_instances_test_stage3_problems_v1.0.0.zip",
+    "2025_instances_train_stage2_exercise_problems_v1.0.0.zip"
+  ],
+  "assets": [
+    {
+      "version": "1.0.0",
+      "sha256": "3bb28e42ec66ea432445647cc78c7e3f2af928434b82cdfd65ca6ec54990ec0e",
+      "asset": "2025_algorithms_081F38_v1.0.0.zip",
+      "tag": "ogc-2025-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_algorithms_081F38_v1.0.0.zip"
+    },
+    {
+      "version": "1.0.0",
+      "sha256": "2aa65c3cf67d3749176c889c7a0ebaf54ea7fcae8f93e6e1c64499acfac19b6e",
+      "asset": "2025_algorithms_12HUB2_v1.0.0.zip",
+      "tag": "ogc-2025-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_algorithms_12HUB2_v1.0.0.zip"
+    },
+    {
+      "version": "1.0.0",
+      "sha256": "49b4510524d6ab38fe0a431ce38aa9d4a2f086c3dc40a01dd3404e922cbdaaf2",
+      "asset": "2025_algorithms_300_v1.0.0.zip",
+      "tag": "ogc-2025-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_algorithms_300_v1.0.0.zip"
+    },
+    {
+      "version": "1.0.0",
+      "sha256": "675016372fdbbf1f655c0b051193c5d3a6dbb8830e98c27ed5834d9dd304a6c9",
+      "asset": "2025_algorithms_FAST_v1.0.0.zip",
+      "tag": "ogc-2025-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_algorithms_FAST_v1.0.0.zip"
+    },
+    {
+      "version": "1.0.0",
+      "sha256": "865a8478bf0bbe0c00ee8a91b8d4fcfe13824919e9c90ae889f4144e8618b290",
+      "asset": "2025_algorithms_FORRORO_v1.0.0.zip",
+      "tag": "ogc-2025-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_algorithms_FORRORO_v1.0.0.zip"
+    },
+    {
+      "version": "1.0.0",
+      "sha256": "dca5e938a2e8ce7858806bc68271e44d76571351dfa22c5351dbfa25bf2ce8a6",
+      "asset": "2025_algorithms_NormalDeck_v1.0.0.zip",
+      "tag": "ogc-2025-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_algorithms_NormalDeck_v1.0.0.zip"
+    },
+    {
+      "version": "1.0.0",
+      "sha256": "66d22fe3856ba423dbacd6898e26b72cf5adc79313576822a1b96a0d57a04fa0",
+      "asset": "2025_algorithms_Wirtz_v1.0.0.zip",
+      "tag": "ogc-2025-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_algorithms_Wirtz_v1.0.0.zip"
+    },
+    {
+      "version": "1.0.0",
+      "sha256": "bb0dfa1ec53f834a5c8d3d0744109ae2267cf63c1eb21f239d9404f9064876fa",
+      "asset": "2025_algorithms_tryAgain_v1.0.0.zip",
+      "tag": "ogc-2025-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_algorithms_tryAgain_v1.0.0.zip"
+    },
+    {
+      "version": "1.0.0",
+      "sha256": "e04a548417b8c73b6ac3b2da4cbbd9a09e78227fac753532c3e76b30e67985f6",
+      "asset": "2025_algorithms_uc784uc2dcuac1cubc1c_v1.0.0.zip",
+      "tag": "ogc-2025-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_algorithms_uc784uc2dcuac1cubc1c_v1.0.0.zip"
+    },
+    {
+      "version": "1.0.0",
+      "sha256": "36e298c66b9dacb1e0a97d2c056ca18ca3651934f745314a98877e9e4c1b9f1f",
+      "asset": "2025_algorithms_uc801uc7acuc801uc18c_v1.0.0.zip",
+      "tag": "ogc-2025-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_algorithms_uc801uc7acuc801uc18c_v1.0.0.zip"
+    },
+    {
+      "version": "1.0.0",
+      "sha256": "b664c9a7ebb1a6ada1cc54773308eb63e58d5bdf3cef44c04f69d593c6f51307",
+      "asset": "2025_instances_test_stage1_problems_v1.0.0.zip",
+      "tag": "ogc-2025-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_instances_test_stage1_problems_v1.0.0.zip"
+    },
+    {
+      "version": "1.0.0",
+      "sha256": "3eca6b0317b83db4c599d7f86207e6b8f8c1bf4c92638c8dbbdbdb627d49c8f5",
+      "asset": "2025_instances_test_stage2_problems_v1.0.0.zip",
+      "tag": "ogc-2025-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_instances_test_stage2_problems_v1.0.0.zip"
+    },
+    {
+      "version": "1.0.0",
+      "sha256": "69c2bd3863a610840275a89f417b09ff1427558ffb855ffc63cf06d4d2a07670",
+      "asset": "2025_instances_test_stage3_problems_v1.0.0.zip",
+      "tag": "ogc-2025-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_instances_test_stage3_problems_v1.0.0.zip"
+    },
+    {
+      "version": "1.0.0",
+      "sha256": "dc23d4728f2faee167a1ca6a6839c8eaebe080eaf425c97a4b60de1eb9e06b11",
+      "asset": "2025_instances_train_stage2_exercise_problems_v1.0.0.zip",
+      "tag": "ogc-2025-assets",
+      "url": "https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_instances_train_stage2_exercise_problems_v1.0.0.zip"
+    }
+  ]
+}

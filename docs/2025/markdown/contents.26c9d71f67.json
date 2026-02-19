@@ -18,7 +18,7 @@
     },
     {
       "id": "preliminary-results",
-      "file": "preliminary-results.5ef741d929.md",
+      "file": "preliminary-results.15e62d348c.md",
       "title": {
         "en": "Preliminary Results",
         "ko": "예선 결과"
@@ -26,7 +26,7 @@
     },
     {
       "id": "main-practice",
-      "file": "main-practice.dfbd710e30.md",
+      "file": "main-practice.fc2ef96446.md",
       "title": {
         "en": "Main Stage Practice Problems",
         "ko": "본선 연습 문제 및 평가 안내"
@@ -34,7 +34,7 @@
     },
     {
       "id": "main-results",
-      "file": "main-results.f402590368.md",
+      "file": "main-results.5726e6a236.md",
       "title": {
         "en": "Main Stage Results",
         "ko": "본선 결과"
@@ -58,7 +58,7 @@
     },
     {
       "id": "final-results",
-      "file": "final-results.7dc605d243.md",
+      "file": "final-results.4cfb412b49.md",
       "title": {
         "en": "Final Results",
         "ko": "결선 결과"
@@ -66,7 +66,7 @@
     },
     {
       "id": "final-ranking",
-      "file": "final-ranking.34f3fa04cf.md",
+      "file": "final-ranking.a853a187b4.md",
       "title": {
         "en": "Final Ranking and Presentations",
         "ko": "최종 순위 및 발표자료"
@@ -90,7 +90,7 @@
     },
     {
       "id": "instance-download",
-      "file": "instance-download.0e24f15237.md",
+      "file": "instance-download.cf8f93edc1.md",
       "sidebar_bgcolor": "#ffeaea",
       "title": {
         "en": "Instance Download",

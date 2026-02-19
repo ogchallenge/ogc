@@ -6,7 +6,7 @@
 
 ## 1. 알고리즘 연습용 문제
 
-[stage1_problems.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__train__stage1_problems_v1.0.0.zip)
+[stage1_problems.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024_instances_train_stage1_problems_v1.0.0.zip)
 
 위 파일을 다운로드해서 압축을 해제하면 총 18개의 json파일을 얻습니다. 각각의 json파일은 참가팀이 알고리즘을 개발하기 위해 사용할 문제들입니다. 18개의 문제들은 모두 상이한 특성(주문 개수, 고정비 등)을 가집니다. 공개된 문제들은 실제 주문 데이터를 바탕으로 익명화를 위해 약간의 가공이 이루어졌습니다.
 

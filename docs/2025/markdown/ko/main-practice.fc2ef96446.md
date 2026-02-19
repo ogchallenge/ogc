@@ -2,7 +2,7 @@
 
 ## 1. 연습용 추가 문제
 
-[stage2_exercise_problems.zip](instances/train/stage2_exercise_problems.zip)
+[stage2_exercise_problems.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_instances_train_stage2_exercise_problems_v1.0.0.zip)
 
 위 파일을 다운로드해서 압축을 해제하면 총 10개의 json파일을 얻을 수 있습니다. 각각의 json파일은 참가팀이 알고리즘을 개발시에 활용할 수 있는 연습용 문제들입니다. 10개의 문제들의 특성은 모두 상이합니다. 
 

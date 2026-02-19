@@ -10,7 +10,7 @@
 
 # 본선 평가 문제 공개
 
-[stage2_problems.zip](instances/test/stage2_problems.zip)
+[stage2_problems.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_instances_test_stage2_problems_v1.0.0.zip)
 
 - P6~P10 이 hidden 문제들 입니다.
 - 본 평가문제는 총 10문제이며 각 문제의 timelimit 는 다음과 같습니다.

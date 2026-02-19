@@ -19,7 +19,7 @@
 
 ## 결선 평가 문제 공개
 
-[stage3_problems.zip](instances/test/stage3_problems.zip)
+[stage3_problems.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_instances_test_stage3_problems_v1.0.0.zip)
 
 결선 평가 문제는 모두 14개이며 각각의 timelimit는 다음과 같습니다.(단위: 초)
 

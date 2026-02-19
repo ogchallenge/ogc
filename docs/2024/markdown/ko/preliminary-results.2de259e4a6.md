@@ -1,12 +1,12 @@
-# Preliminary Results
+# 예선 결과
 
-# Congratulations on Advancing to the Main Round!
+# 본선 진출을 축하합니다!
 
-Over 1400 algorithms were submitted during the preliminary round. Thank you for your passionate participation. 40 teams advance to the main round based on the final leaderboard.
+예선 기간동안 총 1400회 이상의 알고리즘이 제출되었습니다. 참가팀 여러분의 열정적인 참여에 감사드립니다. 본선에는 마지막 리더보드 기준으로 40팀이 진출합니다. 
 
-## OGC 2024 Main Round Advancing Teams
+## OGC 2024 본선 진출 팀 명단
 
-| Rank | Team Name | P1 Score | P2 Score | P3 Score | Total Score |
+| 순위 | 팀명 | P1 Score | P2 Score | P3 Score | Total Score |
 | --- | --- | --- | --- | --- | --- |
 | 1 | MSS1 | 150 | 150 | 151 | 451 |
 | 1 | 바른열정청년들 | 149 | 151 | 151 | 451 |
@@ -49,16 +49,18 @@ Over 1400 algorithms were submitted during the preliminary round. Thank you for 
 | 39 | Streamline | 105 | 115 | 116 | 336 |
 | 40 | Optimusprime | 99 | 127 | 108 | 334 |
 
-# Preliminary Evaluation Problems Released
+# 예선 평가 문제 공개
 
-- P1 (timelimit=60 seconds)
+- P1 (timelimit=60초)
     
-    [STAGE1_TEST_1.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE1_TEST_1.json_v1.0.0.zip)
+    [STAGE1_TEST_1.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024_instances_test_STAGE1_TEST_1.json_v1.0.0.zip)
     
-- P2 (timelimit=60 seconds)
+- P2 (timelimit=60초)
     
-    [STAGE1_TEST_2.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE1_TEST_2.json_v1.0.0.zip)
+    [STAGE1_TEST_2.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024_instances_test_STAGE1_TEST_2.json_v1.0.0.zip)
     
-- P3 (timelimit=60 seconds)
+- P3 (timelimit=60초)
     
-    [STAGE1_TEST_3.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE1_TEST_3.json_v1.0.0.zip)
+    [STAGE1_TEST_3.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024_instances_test_STAGE1_TEST_3.json_v1.0.0.zip)
+    
+

@@ -1,24 +1,26 @@
-# Final Round Practice Problems and Evaluation Guide
+# Main Round Practice Problems and Evaluation Guide
 
 *Update history:*
 
-- *2024/9/12 - Exercise instances are available*
+- *2024/8/11 - Exercise instances are available*
 
 ## 1. Additional Practice Problems
 
-[stage3_problems.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__train__stage3_problems_v1.0.0.zip)
+[stage2_problems.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024_instances_train_stage2_problems_v1.0.0.zip)
 
-Download and extract the above file to get a total of 3 JSON files. Each JSON file is a practice problem that participating teams can use when developing algorithms. The 3 problems all have different characteristics (number of orders, fixed cost, etc.). Public problems have been processed for anonymization based on actual order data.
+Download and extract the above file to get a total of 6 JSON files. Each JSON file is a practice problem that participating teams can use when developing algorithms. The 6 problems all have different characteristics (number of orders, fixed cost, etc.). Public problems have been processed for anonymization based on actual order data.
 
-Use the 3 practice problems released this time, the 27 problems released in the preliminary/main stages, and the three problems used in preliminary evaluation, for a total of 30 practice problems.
+Use the 6 practice problems released this time, the 18 problems released in the preliminary stage, and the three problems used in preliminary evaluation, for a total of 27 practice problems.
 
 > 💡 When you submit an algorithm, evaluation is performed using **separate hidden problems** other than the above public problems. Main round hidden evaluation problems have similar characteristics to public problems, and characteristics of evaluation problems (number of orders, etc.) are not disclosed
 
 ## 2. Algorithm Time Limit
 
-Final round algorithm execution time limits are given differently for each problem. **Each evaluation problem is given a time limit (the `timelimit` parameter of the `algorithm()` function) with a range from minimum 15 seconds (`timelimit=15`) to maximum 8 minutes (480 seconds, `timelimit=480`).** If the algorithm exceeds the execution time limit, problem solving is forcibly terminated and the lowest score (-1 point) is received for that problem. The scoring method for each team is the same as in the preliminary round.
+Main round algorithm execution time limits are given differently for each problem. **Each evaluation problem is given a time limit (the `timelimit` parameter of the `algorithm()` function) with a range from minimum 1 minute (60 seconds, `timelimit=60`) to maximum 5 minutes (300 seconds, `timelimit=300`).** If the algorithm exceeds the execution time limit, problem solving is forcibly terminated and the lowest score (-1 point) is received for that problem. The scoring method for each team is the same as in the preliminary round.
 
-> 💡 **Execution time limits for evaluation problems are not disclosed (however, they will be disclosed after the final round ends).** Likewise, released practice problems do not have fixed execution time limits. That is, you must evaluate and improve algorithm performance by setting various execution time limits for released practice problems
+> 💡 In the preliminary round, all problems had the same 1-minute execution time limit, but **in the main round, it's given differently for each problem.**
+
+> 💡 **Execution time limits for evaluation problems are not disclosed.** Likewise, released practice problems do not have fixed execution time limits. That is, you must evaluate and improve algorithm performance by setting various execution time limits for released practice problems
 
 > 💡 Execution time must be continuously checked within the algorithm to not exceed the time limit. For example, if a specific function used within the algorithm may take a long time and does not check the time limit within that function, the algorithm's execution time may exceed the time limit. Participating teams should pay attention to this and verify that there is sufficient margin time at each execution stage of the algorithm so that the algorithm does not exceed the time limit
 

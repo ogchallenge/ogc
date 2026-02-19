@@ -10,7 +10,7 @@
 
 ## 예선 평가 문제 공개
 
-[stage1_problems.zip](instances/test/stage1_problems.zip)
+[stage1_problems.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_instances_test_stage1_problems_v1.0.0.zip)
 
 - 예선 평가문제는 총 5문제이며 각 문제의 timelimit 는 60초 입니다.
 

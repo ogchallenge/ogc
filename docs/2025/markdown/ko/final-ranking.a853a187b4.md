@@ -31,7 +31,7 @@
 </div>
 
 - [tryAgain Slides](slides/tryAgain_slides.pdf)
-- [tryAgain 알고리즘 코드](algorithms/tryAgain.zip)
+- [tryAgain 알고리즘 코드](https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_algorithms_tryAgain_v1.0.0.zip)
 
 ## 081F38
 
@@ -48,7 +48,7 @@
 </div>
 
 - [081F38 Slides](slides/081F38_slides.pdf)
-- [081F38 알고리즘 코드](algorithms/081F38.zip)
+- [081F38 알고리즘 코드](https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_algorithms_081F38_v1.0.0.zip)
 
 ## NormalDeck
 
@@ -65,7 +65,7 @@
 </div>
 
 - [NormalDeck Slides](slides/NormalDeck_slides.pdf)
-- [NormalDeck 알고리즘 코드](algorithms/NormalDeck.zip)
+- [NormalDeck 알고리즘 코드](https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_algorithms_NormalDeck_v1.0.0.zip)
 
 
 ## 임시개발
@@ -101,7 +101,7 @@
 </div>
 
 - [12HUB2 Slides](slides/12HUB2_slides.pdf)
-- [12HUB2 알고리즘 코드](algorithms/12HUB2.zip)
+- [12HUB2 알고리즘 코드](https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_algorithms_12HUB2_v1.0.0.zip)
 
 ## FAST
 
@@ -118,7 +118,7 @@
 </div>
 
 - [FAST Slides](slides/FAST_slides.pdf)
-- [FAST 알고리즘 코드](algorithms/FAST.zip)
+- [FAST 알고리즘 코드](https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_algorithms_FAST_v1.0.0.zip)
 
 
 ## Wirtz
@@ -136,7 +136,7 @@
 </div>
 
 - [Wirtz Slides](slides/Wirtz_slides.pdf)
-- [Wirtz 알고리즘 코드](algorithms/Wirtz.zip)
+- [Wirtz 알고리즘 코드](https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_algorithms_Wirtz_v1.0.0.zip)
 
 
 ## 적재적소
@@ -172,7 +172,7 @@
 </div>
 
 - [300 Slides](slides/300_slides.pdf)
-- [300 알고리즘 코드](algorithms/300.zip)
+- [300 알고리즘 코드](https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_algorithms_300_v1.0.0.zip)
 
 
 ## FORRORO
@@ -190,4 +190,4 @@
 </div>
 
 - [FORRORO Slides](slides/FORRORO_slides.pdf)
-- [FORRORO 알고리즘 코드](algorithms/FORRORO.zip)
+- [FORRORO 알고리즘 코드](https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_algorithms_FORRORO_v1.0.0.zip)

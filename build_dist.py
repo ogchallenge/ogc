@@ -6,6 +6,7 @@ import posixpath
 import re
 import shutil
 import subprocess
+import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import quote, unquote
@@ -255,7 +256,18 @@ def resolve_release_version(previous: dict[str, str], digest: str) -> tuple[str,
 
 
 def sanitize_release_asset_stem(stem: str) -> str:
-    sanitized = re.sub(r"[^A-Za-z0-9._-]+", "_", stem)
+    stem = unicodedata.normalize("NFC", stem)
+    converted: list[str] = []
+    for ch in stem:
+        if re.match(r"[A-Za-z0-9._-]", ch):
+            converted.append(ch)
+        elif ch in {"/", "\\", " ", "\t", "\n", "\r"}:
+            converted.append("_")
+        else:
+            converted.append(f"u{ord(ch):04x}")
+
+    sanitized = "".join(converted)
+    sanitized = re.sub(r"_+", "_", sanitized)
     return sanitized.strip("._") or "asset"
 
 
@@ -364,18 +376,74 @@ def try_publish_release_assets(year: str, repo_slug: str, tag: str, asset_names:
             print(f"[release:{year}] Failed to create release tag {tag}: {create.stderr.strip()}")
             return
 
-    asset_paths = [str(assets_dir / name) for name in sorted(asset_names)]
-    upload = subprocess.run(
-        ["gh", "release", "upload", tag, "-R", repo_slug, "--clobber", *asset_paths],
+    success_count = 0
+    failed_assets: list[str] = []
+
+    assets_dir_resolved = assets_dir.resolve()
+
+    for asset_name in sorted(asset_names):
+        asset_path = assets_dir / asset_name
+        if not asset_path.exists():
+            failed_assets.append(asset_name)
+            print(f"[release:{year}] Missing local asset, skipped: {asset_name}")
+            continue
+
+        upload = subprocess.run(
+            ["gh", "release", "upload", tag, "-R", repo_slug, "--clobber", str(asset_path)],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+        )
+
+        if upload.returncode != 0:
+            failed_assets.append(asset_name)
+            print(f"[release:{year}] Failed to upload {asset_name}: {upload.stderr.strip()}")
+            continue
+
+        asset_path_resolved = asset_path.resolve()
+        if assets_dir_resolved in asset_path_resolved.parents:
+            asset_path.unlink(missing_ok=True)
+        else:
+            failed_assets.append(asset_name)
+            print(f"[release:{year}] Safety guard blocked deletion outside release_assets: {asset_path}")
+            continue
+
+        success_count += 1
+        print(f"[release:{year}] Uploaded and removed local asset: {asset_name}")
+
+    print(
+        f"[release:{year}] Upload summary | success={success_count} "
+        f"failed={len(failed_assets)} repo={repo_slug}:{tag}"
+    )
+
+    if failed_assets:
+        print(f"[release:{year}] Remaining local assets indicate failures: {failed_assets}")
+
+
+def get_release_asset_names(repo_slug: str, tag: str) -> set[str] | None:
+    if shutil.which("gh") is None:
+        return None
+
+    auth = subprocess.run(
+        ["gh", "auth", "status", "-h", "github.com"],
         cwd=ROOT,
         capture_output=True,
         text=True,
     )
-    if upload.returncode != 0:
-        print(f"[release:{year}] Failed to upload assets: {upload.stderr.strip()}")
-        return
+    if auth.returncode != 0:
+        return None
 
-    print(f"[release:{year}] Uploaded {len(asset_names)} assets to {repo_slug}:{tag}")
+    cmd = ["gh", "release", "view", tag, "-R", repo_slug, "--json", "assets", "--jq", ".assets[].name"]
+    viewed = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
+    if viewed.returncode != 0:
+        return set()
+
+    names = {
+        line.strip()
+        for line in viewed.stdout.splitlines()
+        if line.strip()
+    }
+    return names
 
 
 def sync_release_assets(year: str, year_source_dir: Path, repo_slug: str | None) -> dict[str, str]:
@@ -401,6 +469,7 @@ def sync_release_assets(year: str, year_source_dir: Path, repo_slug: str | None)
     previous_files: dict[str, dict[str, str]] = previous_state.get("files", {})
 
     tag = f"ogc-{year}-assets"
+    remote_asset_names = get_release_asset_names(repo_slug, tag) if repo_slug else None
     assets_dir = ROOT / "release_assets" / year
     if assets_dir.exists():
         shutil.rmtree(assets_dir)
@@ -410,6 +479,7 @@ def sync_release_assets(year: str, year_source_dir: Path, repo_slug: str | None)
     next_files: dict[str, dict[str, str]] = {}
     markdown_url_map: dict[str, str] = {}
     changed_asset_names: list[str] = []
+    metadata_changed = False
 
     for source_file in release_files:
         rel = source_file.relative_to(year_source_dir).as_posix()
@@ -418,12 +488,27 @@ def sync_release_assets(year: str, year_source_dir: Path, repo_slug: str | None)
         version, version_reason = resolve_release_version(previous, digest)
 
         asset_name = build_release_asset_name(year, rel, version)
-        if version_reason != "unchanged":
+        previous_asset = previous.get("asset")
+        asset_name_changed = bool(previous_asset and previous_asset != asset_name)
+        missing_on_release = bool(
+            remote_asset_names is not None and asset_name not in remote_asset_names
+        )
+        should_upload = version_reason != "unchanged" or asset_name_changed or missing_on_release
+
+        if asset_name_changed:
+            metadata_changed = True
+
+        if missing_on_release:
+            metadata_changed = True
+
+        if should_upload:
             changed_asset_names.append(asset_name)
             shutil.copy2(source_file, assets_dir / asset_name)
             print(
                 f"[release:{year}] {rel} -> {asset_name} | "
-                f"version={version} ({version_reason}, upload=yes)"
+                f"version={version} ({version_reason}"
+                f"{', asset_renamed' if asset_name_changed else ''}"
+                f"{', release_missing' if missing_on_release else ''}, upload=yes)"
             )
         else:
             print(
@@ -445,7 +530,12 @@ def sync_release_assets(year: str, year_source_dir: Path, repo_slug: str | None)
             markdown_url_map[rel] = url
 
     manifest_path = year_source_dir / RELEASE_MANIFEST_FILENAME
-    should_update_metadata = bool(changed_asset_names) or (not state_path.exists()) or (not manifest_path.exists())
+    should_update_metadata = (
+        bool(changed_asset_names)
+        or metadata_changed
+        or (not state_path.exists())
+        or (not manifest_path.exists())
+    )
 
     if should_update_metadata:
         state_payload = {
