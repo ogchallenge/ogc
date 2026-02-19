@@ -1,12 +1,12 @@
-# Main Stage Results
+# Main Round Results
 
-# Congratulations on advancing to the final stage!
+# Congratulations on Advancing to the Final!
 
-During the main stage, more than 400 algorithm submissions were made. Thank you for your enthusiastic participation. Based on the final leaderboard, 10 teams advance to the final stage.
+Over 400 algorithms were submitted during the main round. Thank you for your passionate participation. 10 teams advance to the final round based on the final leaderboard.
 
-## OGC 2024 Final Stage Team List (Main Stage Scores)
+## OGC 2024 Final Round Advancing Teams (Main Round Results)
 
-| Rank | Team | P1 | P2 | P3 | P4 | P5 | P6 | Total |
+| Rank | Team Name | P1 | P2 | P3 | P4 | P5 | P6 | Total |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | 바른열정청년들 | 37 | 36 | 37 | 36 | 37 | 37 | 220 |
 | 2 | DMS | 36 | 34 | 36 | 37 | 34 | 36 | 213 |
@@ -19,33 +19,28 @@ During the main stage, more than 400 algorithm submissions were made. Thank you 
 | 9 | OPTMATE | 32 | 30 | 34 | 30 | 28 | 27 | 181 |
 | 10 | 문선균 | 29 | 28 | 28 | 29 | 30 | 31 | 175 |
 
-# Main Stage Evaluation Instances
+# Main Round Evaluation Problems Released
 
-- P1 (timelimit=180s)
+- P1 (timelimit=180 seconds)
     
     [STAGE2_TEST_1.json.zip](instances/test/STAGE2_TEST_1.json.zip)
     
-- P2 (timelimit=300s)
+- P2 (timelimit=300 seconds)
     
     [STAGE2_TEST_2.json.zip](instances/test/STAGE2_TEST_2.json.zip)
     
-- P3 (timelimit=60s)
+- P3 (timelimit=60 seconds)
     
     [STAGE2_TEST_3.json.zip](instances/test/STAGE2_TEST_3.json.zip)
     
-- P4 (timelimit=60s)
+- P4 (timelimit=60 seconds)
     
     [STAGE2_TEST_4.json.zip](instances/test/STAGE2_TEST_4.json.zip)
     
-- P5 (timelimit=120s)
+- P5 (timelimit=120 seconds)
     
     [STAGE2_TEST_5.json.zip](instances/test/STAGE2_TEST_5.json.zip)
     
-- P6 (timelimit=180s)
+- P6 (timelimit=180 seconds)
     
     [STAGE2_TEST_6.json.zip](instances/test/STAGE2_TEST_6.json.zip)
-    
-
-# Main Stage Submission Dashboard
-
-[https://docs.google.com/spreadsheets/d/1K84RiO3JY-kWQ7Bv0mOzqP5Z2GU2HpampwXjxPvFh3M/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1K84RiO3JY-kWQ7Bv0mOzqP5Z2GU2HpampwXjxPvFh3M/edit?usp=sharing)

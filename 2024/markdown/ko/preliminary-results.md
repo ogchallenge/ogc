@@ -64,6 +64,3 @@
     [STAGE1_TEST_3.json.zip](instances/test/STAGE1_TEST_3.json.zip)
     
 
-# 예선 제출 대시보드
-
-[https://docs.google.com/spreadsheets/d/1lNuIWb82mAEsUHM4hN1O3syUzKRbFZEyRhrbzfIfWLA/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1lNuIWb82mAEsUHM4hN1O3syUzKRbFZEyRhrbzfIfWLA/edit?usp=sharing)

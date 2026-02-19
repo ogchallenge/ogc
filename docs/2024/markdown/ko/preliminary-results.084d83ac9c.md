@@ -64,6 +64,3 @@
     [STAGE1_TEST_3.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE1_TEST_3.json_v1.0.0.zip)
     
 
-# 예선 제출 대시보드
-
-[https://docs.google.com/spreadsheets/d/1lNuIWb82mAEsUHM4hN1O3syUzKRbFZEyRhrbzfIfWLA/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1lNuIWb82mAEsUHM4hN1O3syUzKRbFZEyRhrbzfIfWLA/edit?usp=sharing)

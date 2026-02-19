@@ -1,12 +1,12 @@
-# 본선 결과
+# Main Round Results
 
-# 결선 진출을 축하합니다!
+# Congratulations on Advancing to the Final!
 
-본선 기간동안 총 400회 이상의 알고리즘이 제출되었습니다. 참가팀 여러분의 열정적인 참여에 감사드립니다. 결선에는 마지막 리더보드 기준으로 10팀이 진출합니다. 
+Over 400 algorithms were submitted during the main round. Thank you for your passionate participation. 10 teams advance to the final round based on the final leaderboard.
 
-## OGC 2024 결선 진출 팀 명단 (본선 성적)
+## OGC 2024 Final Round Advancing Teams (Main Round Results)
 
-| 순위 | 팀명 | P1 | P2 | P3 | P4 | P5 | P6 | Total |
+| Rank | Team Name | P1 | P2 | P3 | P4 | P5 | P6 | Total |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | 바른열정청년들 | 37 | 36 | 37 | 36 | 37 | 37 | 220 |
 | 2 | DMS | 36 | 34 | 36 | 37 | 34 | 36 | 213 |
@@ -19,33 +19,28 @@
 | 9 | OPTMATE | 32 | 30 | 34 | 30 | 28 | 27 | 181 |
 | 10 | 문선균 | 29 | 28 | 28 | 29 | 30 | 31 | 175 |
 
-# 본선 평가 문제 공개
+# Main Round Evaluation Problems Released
 
-- P1 (timelimit=180초)
+- P1 (timelimit=180 seconds)
     
     [STAGE2_TEST_1.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_1.json_v1.0.0.zip)
     
-- P2 (timelimit=300초)
+- P2 (timelimit=300 seconds)
     
     [STAGE2_TEST_2.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_2.json_v1.0.0.zip)
     
-- P3 (timelimit=60초)
+- P3 (timelimit=60 seconds)
     
     [STAGE2_TEST_3.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_3.json_v1.0.0.zip)
     
-- P4 (timelimit=60초)
+- P4 (timelimit=60 seconds)
     
     [STAGE2_TEST_4.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_4.json_v1.0.0.zip)
     
-- P5 (timelimit=120초)
+- P5 (timelimit=120 seconds)
     
     [STAGE2_TEST_5.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_5.json_v1.0.0.zip)
     
-- P6 (timelimit=180초)
+- P6 (timelimit=180 seconds)
     
     [STAGE2_TEST_6.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE2_TEST_6.json_v1.0.0.zip)
-    
-
-# 본선 제출 대시보드
-
-[https://docs.google.com/spreadsheets/d/1K84RiO3JY-kWQ7Bv0mOzqP5Z2GU2HpampwXjxPvFh3M/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1K84RiO3JY-kWQ7Bv0mOzqP5Z2GU2HpampwXjxPvFh3M/edit?usp=sharing)

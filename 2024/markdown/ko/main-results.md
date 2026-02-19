@@ -45,7 +45,3 @@
     
     [STAGE2_TEST_6.json.zip](instances/test/STAGE2_TEST_6.json.zip)
     
-
-# 본선 제출 대시보드
-
-[https://docs.google.com/spreadsheets/d/1K84RiO3JY-kWQ7Bv0mOzqP5Z2GU2HpampwXjxPvFh3M/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1K84RiO3JY-kWQ7Bv0mOzqP5Z2GU2HpampwXjxPvFh3M/edit?usp=sharing)

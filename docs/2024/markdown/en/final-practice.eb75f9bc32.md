@@ -6,7 +6,7 @@
 
 ## 1. Additional Practice Problems
 
-[stage3_problems.zip](instances/train/stage3_problems.zip)
+[stage3_problems.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__train__stage3_problems_v1.0.0.zip)
 
 Download and extract the above file to get a total of 3 JSON files. Each JSON file is a practice problem that participating teams can use when developing algorithms. The 3 problems all have different characteristics (number of orders, fixed cost, etc.). Public problems have been processed for anonymization based on actual order data.
 

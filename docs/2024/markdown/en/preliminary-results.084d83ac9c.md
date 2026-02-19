@@ -1,12 +1,12 @@
 # Preliminary Results
 
-# Congratulations on advancing to the main stage!
+# Congratulations on Advancing to the Main Round!
 
-During the preliminary stage, more than 1,400 algorithm submissions were made. Thank you for your enthusiastic participation. Based on the final leaderboard, 40 teams advance to the main stage.
+Over 1400 algorithms were submitted during the preliminary round. Thank you for your passionate participation. 40 teams advance to the main round based on the final leaderboard.
 
-## OGC 2024 Main Stage Team List
+## OGC 2024 Main Round Advancing Teams
 
-| Rank | Team | P1 Score | P2 Score | P3 Score | Total Score |
+| Rank | Team Name | P1 Score | P2 Score | P3 Score | Total Score |
 | --- | --- | --- | --- | --- | --- |
 | 1 | MSS1 | 150 | 150 | 151 | 451 |
 | 1 | 바른열정청년들 | 149 | 151 | 151 | 451 |
@@ -49,21 +49,16 @@ During the preliminary stage, more than 1,400 algorithm submissions were made. T
 | 39 | Streamline | 105 | 115 | 116 | 336 |
 | 40 | Optimusprime | 99 | 127 | 108 | 334 |
 
-# Preliminary Evaluation Instances
+# Preliminary Evaluation Problems Released
 
-- P1 (timelimit=60s)
+- P1 (timelimit=60 seconds)
     
     [STAGE1_TEST_1.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE1_TEST_1.json_v1.0.0.zip)
     
-- P2 (timelimit=60s)
+- P2 (timelimit=60 seconds)
     
     [STAGE1_TEST_2.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE1_TEST_2.json_v1.0.0.zip)
     
-- P3 (timelimit=60s)
+- P3 (timelimit=60 seconds)
     
     [STAGE1_TEST_3.json.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2024-assets/2024__instances__test__STAGE1_TEST_3.json_v1.0.0.zip)
-    
-
-# Preliminary Submission Dashboard
-
-[https://docs.google.com/spreadsheets/d/1lNuIWb82mAEsUHM4hN1O3syUzKRbFZEyRhrbzfIfWLA/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1lNuIWb82mAEsUHM4hN1O3syUzKRbFZEyRhrbzfIfWLA/edit?usp=sharing)
