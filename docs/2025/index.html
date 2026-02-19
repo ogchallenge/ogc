@@ -19,7 +19,7 @@
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+KR:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
         rel="stylesheet"
     />
-    <link rel="stylesheet" href="../styles.259f00efd9.css" />
+    <link rel="stylesheet" href="../styles.581036042f.css" />
     <!-- Year-specific overrides (if needed) -->
     <!-- <link rel="stylesheet" href="styles.05b9dcaf8e.css" />
     <!-- Highlight.js for syntax highlighting -->
@@ -38,7 +38,6 @@
     <div class="layout">
         <aside class="sidebar">
             <a href="#home" class="sidebar__logo">OGC2025</a>
-
             <nav class="sidebar__sections" id="sidebarSections"></nav>
         </aside>
 
@@ -51,18 +50,18 @@
                         <div class="hero__badge" data-lang="ko">2025 최적화 그랜드 챌린지</div>
                         <h1 class="hero__title">OGC2025</h1>
                         <p class="hero__subtitle" data-lang="ko">
-                            문제 설명, 알고리즘 제출, 예선/본선/결선 안내를 한 곳에 모았습니다.
+                            문제 설명, 알고리즘 제출, 예선/본선/결선 안내 및 결과를 조회할 수 있습니다.
                         </p>
                         <p class="hero__subtitle hero__subtitle--en" data-lang="en">
-                            A curated hub for problem details, submission instructions, and stage updates.
+                            An archive for problem details, submission instructions, and stage updates.
                         </p>
                     </header>
 
                     <section id="sections" class="content"></section>
 
                     <footer class="footer">
-                        <p data-lang="ko">OGC2024 공식 안내 링크 모음</p>
-                        <p class="footer__en" data-lang="en">OGC2024 official link collection.</p>
+                        <p data-lang="ko">OGC2025 공식 안내 링크 모음</p>
+                        <p class="footer__en" data-lang="en">OGC2025 official link collection.</p>
                     </footer>
                 </div>
 
@@ -167,7 +166,7 @@
         let sidebarConfig = null;
 
         async function loadSidebarConfig() {
-            const response = await fetch('markdown/contents.4a716d9a87.json');
+            const response = await fetch('markdown/contents.346fc9bbb9.json');
             if (!response.ok) {
                 throw new Error(`Failed to load sidebar config: ${response.status}`);
             }
@@ -182,7 +181,7 @@
                     en: 'Optimization Grand Challenge 2025',
                     ko: '최적화 그랜드 챌린지 2025'
                 },
-                file: 'main.29965456e7.md'
+                file: 'main.80319b0f77.md'
             };
             // sidebar config의 페이지들 추가
             (config.pages || []).forEach((page) => {
@@ -203,17 +202,10 @@
                 const wrapper = document.createElement('div');
                 wrapper.className = 'sidebar__category';
 
-                const titleEn = document.createElement('h3');
-                titleEn.className = 'sidebar__category-title';
-                titleEn.dataset.lang = 'en';
-                titleEn.textContent = section.title?.en || '';
-                wrapper.appendChild(titleEn);
-
-                const titleKo = document.createElement('h3');
-                titleKo.className = 'sidebar__category-title';
-                titleKo.dataset.lang = 'ko';
-                titleKo.textContent = section.title?.ko || '';
-                wrapper.appendChild(titleKo);
+                const title = document.createElement('h3');
+                title.className = 'sidebar__category-title';
+                title.textContent = language === 'en' ? (section.title?.en || '') : (section.title?.ko || '');
+                wrapper.appendChild(title);
 
                 const list = document.createElement('ul');
                 (section.items || []).forEach((pageId) => {
@@ -221,23 +213,13 @@
                     if (!page) return;
                     const item = document.createElement('li');
 
-                    const linkEn = document.createElement('a');
-                    linkEn.href = `#${pageId}`;
-                    linkEn.dataset.lang = 'en';
-                    linkEn.textContent = page.title?.en || pageId;
+                    const link = document.createElement('a');
+                    link.href = `#${pageId}`;
+                    link.textContent = language === 'en' ? (page.title?.en || pageId) : (page.title?.ko || pageId);
                     if (page.sidebarBgColor) {
-                        linkEn.style.setProperty('--sidebar-item-bg', page.sidebarBgColor);
+                        link.style.setProperty('--sidebar-item-bg', page.sidebarBgColor);
                     }
-                    item.appendChild(linkEn);
-
-                    const linkKo = document.createElement('a');
-                    linkKo.href = `#${pageId}`;
-                    linkKo.dataset.lang = 'ko';
-                    linkKo.textContent = page.title?.ko || pageId;
-                    if (page.sidebarBgColor) {
-                        linkKo.style.setProperty('--sidebar-item-bg', page.sidebarBgColor);
-                    }
-                    item.appendChild(linkKo);
+                    item.appendChild(link);
 
                     list.appendChild(item);
                 });
@@ -315,9 +297,10 @@
                 if (nextDesc) metaDesc.setAttribute('content', nextDesc);
             }
             clearMarkdownCache();
-            // 언어 변경 후 sidebar 다시 렌더링
+            // 언어 변경 후 sidebar와 홈 섹션 다시 렌더링
             if (sidebarConfig) {
                 renderSidebar(sidebarConfig);
+                renderHomeSections(sidebarConfig);
             }
         }
 
@@ -436,22 +419,13 @@
             // 홈 페이지 숨기기
             document.getElementById('home').style.display = 'none';
 
-            document.title = `OGC2024 - ${pageTitle}`;
+            document.title = `OGC2025 - ${pageTitle}`;
             
             // 스크롤 위로
             window.scrollTo(0, 0);
         }
 
-        // 홈 페이지로 돌아가기
-        function showHome() {
-            document.getElementById('home').style.display = 'block';
-            const contentPages = document.querySelectorAll('#content-pages > div');
-            contentPages.forEach(p => p.style.display = 'none');
-            document.title = 'OGC2025';
-            window.scrollTo(0, 0);
-        }
-
-        function navigateToHash(hash) {
+function navigateToHash(hash) {
             updateActiveNav(hash);
             if (!hash || hash === 'home') {
                 loadPage('main');
@@ -460,9 +434,22 @@
             }
         }
 
+        function syncLangFromStorage() {
+            const preferred = getPreferredLang();
+            if (preferred === language) return;
+            setLang(preferred);
+            navigateToHash(window.location.hash.slice(1));
+        }
+
         // 해시 변경 감지
         window.addEventListener('hashchange', () => {
             navigateToHash(window.location.hash.slice(1));
+        });
+
+        window.addEventListener('storage', (event) => {
+            if (event.key === 'ogc_lang') {
+                syncLangFromStorage();
+            }
         });
 
         document.addEventListener('click', (event) => {
@@ -561,6 +548,7 @@
                 console.error('Failed to load sidebar config:', error);
             }
             initResponsiveSidebar();
+            syncLangFromStorage();
             navigateToHash(window.location.hash.slice(1));
         }
 

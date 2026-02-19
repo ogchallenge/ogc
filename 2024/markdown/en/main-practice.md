@@ -1,4 +1,4 @@
-# Main Round Practice Problems and Evaluation Guide (1)
+# Main Round Practice Problems and Evaluation Guide
 
 *Update history:*
 

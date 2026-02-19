@@ -176,11 +176,7 @@
     <div class="year-selector-bar">
         <div class="year-selector-container">
             <a href="/" class="logo-small">OGC</a>
-            <div class="year-links">
-                <a href="#" class="year-link active" data-year="2024">2024</a>
-                <a href="#" class="year-link coming-soon" data-year="2025">2025 (Coming)</a>
-                <a href="#" class="year-link coming-soon" data-year="2026">2026 (Coming)</a>
-            </div>
+            <div class="year-links" id="yearLinks"></div>
             <div class="lang-selector" role="group" aria-label="Language">
                 <button type="button" class="lang-toggle-btn" data-lang="ko">KO</button>
                 <button type="button" class="lang-toggle-btn" data-lang="en">EN</button>
@@ -194,9 +190,33 @@
     </div>
 
     <script>
-        const AVAILABLE_YEARS = ['2024'];
+        const AVAILABLE_YEARS = ['2024', '2025'];
         const ALL_YEARS = ['2024', '2025', '2026'];
         const SUPPORTED_LANGS = ['ko', 'en'];
+
+        function getLatestAvailableYear() {
+            if (!AVAILABLE_YEARS.length) return ALL_YEARS[ALL_YEARS.length - 1];
+            return AVAILABLE_YEARS.reduce((latest, year) => (Number(year) > Number(latest) ? year : latest));
+        }
+
+        function renderYearLinks() {
+            const yearLinks = document.getElementById('yearLinks');
+            yearLinks.innerHTML = ALL_YEARS.map((year) => {
+                const isAvailable = AVAILABLE_YEARS.includes(year);
+                const classes = `year-link${isAvailable ? '' : ' coming-soon'}`;
+                const label = isAvailable ? year : `${year} (Coming)`;
+                return `<a href="#" class="${classes}" data-year="${year}">${label}</a>`;
+            }).join('');
+        }
+
+        function bindYearLinkEvents() {
+            document.querySelectorAll('.year-link:not(.coming-soon)').forEach((link) => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadYear(link.dataset.year);
+                });
+            });
+        }
 
         function getPreferredLang() {
             const saved = localStorage.getItem('ogc_lang');
@@ -217,20 +237,23 @@
 
         // Get current year from URL hash or localStorage
         function getCurrentYear() {
+            const latestAvailable = getLatestAvailableYear();
             const hash = window.location.hash.slice(1);
-            if (hash && ALL_YEARS.includes(hash)) {
+            if (hash && AVAILABLE_YEARS.includes(hash)) {
                 return hash;
             }
             const saved = localStorage.getItem('ogc_year');
-            if (saved && ALL_YEARS.includes(saved)) {
+            if (saved && AVAILABLE_YEARS.includes(saved)) {
                 return saved;
             }
-            return '2024';
+            return latestAvailable;
         }
 
         // Update iframe and active state
         function loadYear(year) {
-            if (!ALL_YEARS.includes(year)) return;
+            if (!AVAILABLE_YEARS.includes(year)) {
+                year = getLatestAvailableYear();
+            }
 
             // Update URL hash
             window.location.hash = year;
@@ -247,19 +270,14 @@
             });
         }
 
-        // Year link click handlers
-        document.querySelectorAll('.year-link:not(.coming-soon)').forEach((link) => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                loadYear(link.dataset.year);
-            });
-        });
-
         // Handle hash change
         window.addEventListener('hashchange', () => {
             const year = getCurrentYear();
             loadYear(year);
         });
+
+        renderYearLinks();
+        bindYearLinkEvents();
 
         // Load initial year
         const initialYear = getCurrentYear();

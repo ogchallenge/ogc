@@ -16,10 +16,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+KR:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+KR:wght@400;500;600;700&display=swap"
         rel="stylesheet"
     />
-    <link rel="stylesheet" href="../styles.259f00efd9.css" />
+    <link rel="stylesheet" href="../styles.581036042f.css" />
     <!-- Year-specific overrides (if needed) -->
     <!-- <link rel="stylesheet" href="styles.5f6dc3dbac.css" />
     <!-- Highlight.js for syntax highlighting -->
@@ -166,7 +166,7 @@
         let sidebarConfig = null;
 
         async function loadSidebarConfig() {
-            const response = await fetch('markdown/contents.2c8585efb8.json');
+            const response = await fetch('markdown/contents.1073c3b55d.json');
             if (!response.ok) {
                 throw new Error(`Failed to load sidebar config: ${response.status}`);
             }
@@ -181,7 +181,7 @@
                     en: 'Optimization Grand Challenge 2024',
                     ko: '최적화 그랜드 챌린지 2024'
                 },
-                file: 'main.62a7afcaef.md'
+                file: 'main.5f74e5777e.md'
             };
             // sidebar config의 페이지들 추가
             (config.pages || []).forEach((page) => {

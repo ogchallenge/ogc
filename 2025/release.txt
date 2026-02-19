@@ -3,3 +3,7 @@
 # - 폴더 예: baselines
 # - 와일드카드 예: instances/test/*.zip
 # 주석/빈 줄은 무시됩니다.
+
+instances/**/*.zip
+
+algorithms/*.zip
