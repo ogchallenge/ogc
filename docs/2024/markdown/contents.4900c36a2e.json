@@ -91,6 +91,7 @@
     {
       "id": "instance-download",
       "file": "instance-download.a4719c7bfa.md",
+      "sidebar_bgcolor": "#ffeaea",
       "title": {
         "en": "Instance Download",
         "ko": "문제 다운로드 모음"
