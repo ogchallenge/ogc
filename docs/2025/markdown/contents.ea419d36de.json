@@ -2,7 +2,7 @@
   "pages": [
     {
       "id": "problem-description",
-      "file": "problem-description.22b46dc745.md",
+      "file": "problem-description.3a19c2280e.md",
       "title": {
         "en": "Problem Description & Ranking Criteria",
         "ko": "문제 설명 및 순위 결정 방법"
@@ -10,7 +10,7 @@
     },
     {
       "id": "baseline-algorithm",
-      "file": "baseline-algorithm.a09ccb0794.md",
+      "file": "baseline-algorithm.01c295e38a.md",
       "title": {
         "en": "Development Environment & Baseline Algorithm",
         "ko": "개발 환경 및 베이스라인 알고리즘"
@@ -18,7 +18,7 @@
     },
     {
       "id": "preliminary-results",
-      "file": "preliminary-results.15e62d348c.md",
+      "file": "preliminary-results.fdf02c14ad.md",
       "title": {
         "en": "Preliminary Results",
         "ko": "예선 결과"
@@ -26,7 +26,7 @@
     },
     {
       "id": "main-practice",
-      "file": "main-practice.fc2ef96446.md",
+      "file": "main-practice.0c5ebdacc3.md",
       "title": {
         "en": "Main Stage Practice Problems",
         "ko": "본선 연습 문제 및 평가 안내"
@@ -34,7 +34,7 @@
     },
     {
       "id": "main-results",
-      "file": "main-results.5726e6a236.md",
+      "file": "main-results.c39165f68f.md",
       "title": {
         "en": "Main Stage Results",
         "ko": "본선 결과"
@@ -50,7 +50,7 @@
     },
     {
       "id": "final-notices",
-      "file": "final-notices.e6ff57d23b.md",
+      "file": "final-notices.a3bda1e4e2.md",
       "title": {
         "en": "Notices for Final Stage",
         "ko": "결선 관련 참고 사항"
@@ -58,7 +58,7 @@
     },
     {
       "id": "final-results",
-      "file": "final-results.4cfb412b49.md",
+      "file": "final-results.444736e537.md",
       "title": {
         "en": "Final Results",
         "ko": "결선 결과"
@@ -66,7 +66,7 @@
     },
     {
       "id": "final-ranking",
-      "file": "final-ranking.a853a187b4.md",
+      "file": "final-ranking.17303d777d.md",
       "title": {
         "en": "Final Ranking and Presentations",
         "ko": "최종 순위 및 발표자료"
@@ -74,7 +74,7 @@
     },
     {
       "id": "final-photos",
-      "file": "final-photos.5a1ef27dcf.md",
+      "file": "final-photos.2c110172f7.md",
       "title": {
         "en": "Award Ceremony Photos",
         "ko": "최종발표 및 시상식 사진"
@@ -82,7 +82,7 @@
     },
     {
       "id": "instance-generation",
-      "file": "instance-generation.786f98af64.md",
+      "file": "instance-generation.fdab7d6100.md",
       "title": {
         "en": "Instance Generation Method",
         "ko": "문제 생성 방법"
@@ -90,7 +90,7 @@
     },
     {
       "id": "instance-download",
-      "file": "instance-download.cf8f93edc1.md",
+      "file": "instance-download.087573d7a8.md",
       "sidebar_bgcolor": "#ffeaea",
       "title": {
         "en": "Instance Download",

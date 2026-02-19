@@ -4,7 +4,7 @@
 
 ![Roll-on Roll-off Optimization](poster.png)
 
-2025 최적화 그랜드 챌린지에 오신 것을 환영합니다. 
+### 2025 최적화 그랜드 챌린지에 오신 것을 환영합니다. 
 
 ---
 
