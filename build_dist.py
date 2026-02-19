@@ -705,6 +705,10 @@ def hash_selected_files(scope_dir: Path, targets: list[str], skip_markdown_paths
         rel = path.relative_to(scope_dir).as_posix()
         if rel in {"file_hashing.txt", RELEASE_STATE_FILENAME, RELEASE_MANIFEST_FILENAME, RELEASE_CONFIG_FILENAME}:
             continue
+        if rel == "index.html":
+            continue
+        if rel == "index.html":
+            continue
         if skip_markdown_paths and rel.startswith("markdown/"):
             continue
 
