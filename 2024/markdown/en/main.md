@@ -1,10 +1,16 @@
 # 2024 Optimization Grand Challenge
 
-**Hosted by**: Korean Institute of Industrial Engineers / LG CNS
 
 ## Competition Poster
 
 ![2024 OGC Poster](poster.png)
+
+## Competition Overview
+
+Optimization Grand Challenge 2024 (OGC 2024) is an algorithm competition focused on solving real-world delivery optimization problems.
+
+- Hosted by : LG CNS, Korean Institute of Industrial Engineers
+
 
 ---
 
