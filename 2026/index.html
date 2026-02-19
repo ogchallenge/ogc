@@ -186,7 +186,8 @@
                 if (!page.id) return;
                 pages[page.id] = {
                     title: page.title || {},
-                    file: page.file || ''
+                    file: page.file || '',
+                    sidebarBgColor: page.sidebar_bgcolor || ''
                 };
             });
         }
@@ -221,12 +222,18 @@
                     linkEn.href = `#${pageId}`;
                     linkEn.dataset.lang = 'en';
                     linkEn.textContent = page.title?.en || pageId;
+                    if (page.sidebarBgColor) {
+                        linkEn.style.setProperty('--sidebar-item-bg', page.sidebarBgColor);
+                    }
                     item.appendChild(linkEn);
 
                     const linkKo = document.createElement('a');
                     linkKo.href = `#${pageId}`;
                     linkKo.dataset.lang = 'ko';
                     linkKo.textContent = page.title?.ko || pageId;
+                    if (page.sidebarBgColor) {
+                        linkKo.style.setProperty('--sidebar-item-bg', page.sidebarBgColor);
+                    }
                     item.appendChild(linkKo);
 
                     list.appendChild(item);

@@ -196,6 +196,7 @@ html[data-mode="iframe"] .year-select {
   padding: 8px 12px;
   text-decoration: none;
   color: var(--ink);
+  background: var(--sidebar-item-bg, transparent);
   border-radius: 0;
   font-size: 16px;
   font-weight: 500;
@@ -206,13 +207,13 @@ html[data-mode="iframe"] .year-select {
 .sidebar__category a:hover {
   color: var(--accent);
   border: 1px dashed var(--accent);
-  background: transparent;
+  background: var(--sidebar-item-bg, transparent);
 }
 
 .sidebar__category a.active {
   color: var(--accent);
   border: 1px dashed var(--accent);
-  background: rgba(29, 108, 106, 0.1);
+  background: var(--sidebar-item-bg, rgba(29, 108, 106, 0.1));
   font-weight: 600;
 }
 

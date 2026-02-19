@@ -79,6 +79,23 @@
         "en": "Final Results",
         "ko": "최종 결과"
       }
+    },
+    {
+      "id": "instance-generation",
+      "file": "instance-generation.md",
+      "title": {
+        "en": "Instance Generation Method",
+        "ko": "문제 생성 방법"
+      }
+    },
+    {
+      "id": "instance-download",
+      "file": "instance-download.md",
+      "sidebar_bgcolor": "#ffeaea",
+      "title": {
+        "en": "Instance Download",
+        "ko": "문제 다운로드 모음"
+      }
     }
   ],
   "sections": [
@@ -122,6 +139,16 @@
         "final-submission",
         "final-results-algorithms",
         "final-results"
+      ]
+    },
+    {
+      "title": {
+        "en": "Instance Download",
+        "ko": "문제 다운로드"
+      },
+      "items": [
+        "instance-generation",
+        "instance-download"
       ]
     }
   ]

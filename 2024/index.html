@@ -185,7 +185,8 @@
                 if (!page.id) return;
                 pages[page.id] = {
                     title: page.title || {},
-                    file: page.file || ''
+                    file: page.file || '',
+                    sidebarBgColor: page.sidebar_bgcolor || ''
                 };
             });
         }
@@ -212,6 +213,9 @@
                     const link = document.createElement('a');
                     link.href = `#${pageId}`;
                     link.textContent = language === 'en' ? (page.title?.en || pageId) : (page.title?.ko || pageId);
+                    if (page.sidebarBgColor) {
+                        link.style.setProperty('--sidebar-item-bg', page.sidebarBgColor);
+                    }
                     item.appendChild(link);
 
                     list.appendChild(item);

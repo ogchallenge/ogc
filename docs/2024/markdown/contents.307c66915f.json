@@ -1,0 +1,154 @@
+{
+  "pages": [
+    {
+      "id": "problem-description",
+      "file": "problem-description.b3215bf7da.md",
+      "title": {
+        "en": "Problem Description & Ranking Criteria",
+        "ko": "문제 설명 및 순위 결정 방법"
+      }
+    },
+    {
+      "id": "baseline-algorithm",
+      "file": "baseline-algorithm.a51fc016d3.md",
+      "title": {
+        "en": "Development Environment & Baseline Algorithm",
+        "ko": "개발 환경 및 베이스라인 알고리즘"
+      }
+    },
+    {
+      "id": "preliminary-practice",
+      "file": "preliminary-practice.ebcbc7f6e1.md",
+      "title": {
+        "en": "Preliminary Practice Problems",
+        "ko": "예선 연습 문제 및 평가 안내"
+      }
+    },
+    {
+      "id": "preliminary-results",
+      "file": "preliminary-results.be11e7460f.md",
+      "title": {
+        "en": "Preliminary Results",
+        "ko": "예선 결과"
+      }
+    },
+    {
+      "id": "main-practice",
+      "file": "main-practice.7bcb4b5bb6.md",
+      "title": {
+        "en": "Main Stage Practice Problems",
+        "ko": "본선 연습 문제 및 평가 안내"
+      }
+    },
+    {
+      "id": "main-results",
+      "file": "main-results.bd2b719f62.md",
+      "title": {
+        "en": "Main Stage Results",
+        "ko": "본선 결과"
+      }
+    },
+    {
+      "id": "final-practice",
+      "file": "final-practice.d8d4a5969b.md",
+      "title": {
+        "en": "Final Practice Problems",
+        "ko": "결선 연습 문제 및 평가 안내"
+      }
+    },
+    {
+      "id": "final-submission",
+      "file": "final-submission.c99f033d50.md",
+      "title": {
+        "en": "Submission & Presentation Guide",
+        "ko": "결선 제출 및 발표 안내"
+      }
+    },
+    {
+      "id": "final-results-algorithms",
+      "file": "final-results-algorithms.311b95ae89.md",
+      "title": {
+        "en": "Final Results & Algorithms",
+        "ko": "결선 결과 및 알고리즘 공개"
+      }
+    },
+    {
+      "id": "final-results",
+      "file": "final-results.abc672acca.md",
+      "title": {
+        "en": "Final Results",
+        "ko": "최종 결과"
+      }
+    },
+    {
+      "id": "instance-generation",
+      "file": "instance-generation.c8b373499a.md",
+      "title": {
+        "en": "Instance Generation Method",
+        "ko": "문제 생성 방법"
+      }
+    },
+    {
+      "id": "instance-download",
+      "file": "instance-download.a4719c7bfa.md",
+      "title": {
+        "en": "Instance Download",
+        "ko": "문제 다운로드 모음"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "title": {
+        "en": "Problem & Algorithm",
+        "ko": "문제 및 알고리즘"
+      },
+      "items": [
+        "problem-description",
+        "baseline-algorithm"
+      ]
+    },
+    {
+      "title": {
+        "en": "Preliminary",
+        "ko": "예선"
+      },
+      "items": [
+        "preliminary-practice",
+        "preliminary-results"
+      ]
+    },
+    {
+      "title": {
+        "en": "Main Stage",
+        "ko": "본선"
+      },
+      "items": [
+        "main-practice",
+        "main-results"
+      ]
+    },
+    {
+      "title": {
+        "en": "Final Stage",
+        "ko": "결선"
+      },
+      "items": [
+        "final-practice",
+        "final-submission",
+        "final-results-algorithms",
+        "final-results"
+      ]
+    },
+    {
+      "title": {
+        "en": "Instance Download",
+        "ko": "문제 다운로드"
+      },
+      "items": [
+        "instance-generation",
+        "instance-download"
+      ]
+    }
+  ]
+}

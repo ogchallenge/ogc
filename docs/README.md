@@ -4,7 +4,7 @@ OGC(Optimization Grand Challenge) 연도별 안내 페이지를 정적 HTML로 �
 
 ## 📁 주요 구조
 
-- `index.96880a0834.html`, `styles.7ca9e01889.css`: 루트 포털 페이지
+- `index.fad16c063f.html`, `styles.259f00efd9.css`: 루트 포털 페이지
 - `2024/`, `2025/`, `2026/`: 연도별 소스
 - `build_dist.py`: 해시 기반 배포 파일 생성 스크립트
 - `file_hashing.txt`: 루트 해시 대상 설정
@@ -24,7 +24,7 @@ OGC(Optimization Grand Challenge) 연도별 안내 페이지를 정적 HTML로 �
 해시 파일명으로 변환할 대상을 정의합니다. 루트용 1개, 연도별(`2024/`, `2025/`, `2026/`) 1개씩 존재합니다.
 
 - 지원 형식
-  - 파일: `index.96880a0834.html`
+  - 파일: `index.fad16c063f.html`
   - 폴더: `markdown`
   - 와일드카드: `*.html`, `assets/**/*.png`
 - 주석(`#`)과 빈 줄은 무시됩니다.
@@ -39,7 +39,7 @@ markdown
 동작 요약:
 
 - 지정된 파일은 `name.<hash>.ext` 형태로 변경됩니다.
-- `index.96880a0834.html`이 해시 대상이면 `docs/index.html`(또는 `docs/<year>/index.html`)은 해시된 실제 파일로 redirect하는 로더로 유지됩니다.
+- `index.fad16c063f.html`이 해시 대상이면 `docs/index.html`(또는 `docs/<year>/index.html`)은 해시된 실제 파일로 redirect하는 로더로 유지됩니다.
 
 ### 2) `release.txt`
 
