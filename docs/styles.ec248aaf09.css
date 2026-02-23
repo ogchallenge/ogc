@@ -899,6 +899,7 @@ html[data-mode="iframe"] .year-select {
   flex-direction: column;
   height: 100vh;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .portal .year-selector-bar {
@@ -1047,5 +1048,84 @@ html[data-mode="iframe"] .year-select {
   .portal .year-link {
     padding: 6px 12px;
     font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .portal .year-selector-bar {
+    padding: 10px 10px;
+  }
+
+  .portal .year-selector-container {
+    gap: 8px;
+  }
+
+  .portal .logo-small {
+    font-size: 16px;
+    padding: 5px 9px;
+  }
+
+  .portal .lang-selector {
+    padding: 2px;
+  }
+
+  .portal .lang-toggle-btn {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .portal .year-link {
+    font-size: 12px;
+    padding: 5px 10px;
+    box-shadow: 3px 3px 0 #10162f;
+  }
+
+  .sidebar__logo {
+    font-size: 18px;
+  }
+
+  .sidebar__category-title {
+    font-size: 15px;
+  }
+
+  .sidebar__category a {
+    font-size: 14px;
+    padding: 7px 10px;
+  }
+
+  .main-content {
+    padding: 14px 10px 24px;
+  }
+
+  .page-header h1 {
+    font-size: clamp(20px, 6.8vw, 28px);
+  }
+
+  .content h2 {
+    margin: 24px 0 12px;
+    font-size: 18px;
+  }
+
+  .content h3 {
+    margin: 18px 0 10px;
+    font-size: 16px;
+  }
+
+  .content p,
+  .content li,
+  .content table,
+  .content table th,
+  .content table td {
+    font-size: 14px;
+  }
+
+  .article,
+  .card {
+    padding: 14px;
   }
 }
