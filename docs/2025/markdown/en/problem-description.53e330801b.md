@@ -152,19 +152,19 @@ The objective function is defined only for feasible solutions:
 
 - **(sum of all route costs) - (total cost lower bound, LB)**
 
-> The total cost lower bound is computed as follows:
->
-> - $P$: set of ports
-> - $F$: route fixed cost
-> - $Load_p$: total number of vehicles to load at port $p$ (demands with origin $p$)
-> - $Unload_p$: total number of vehicles to unload at port $p$ (demands with destination $p$)
-> - $N_m$: the set of $m$ nodes (excluding gate) closest to gate
-> - $d_i$: shortest distance from gate to node $i$
->
-> $$
-> \text{LB} := \sum_{p \in P} \left[ F \times (Load_p + Unload_p) + \sum_{i \in N_{Load_p}} d_i + \sum_{i \in N_{Unload_p}} d_i \right]
-> $$
->
+The total cost lower bound is computed as follows:
+
+- $P$: set of ports
+- $F$: route fixed cost
+- $Load_p$: total number of vehicles to load at port $p$ (demands with origin $p$)
+- $Unload_p$: total number of vehicles to unload at port $p$ (demands with destination $p$)
+- $N_m$: the set of $m$ nodes (excluding gate) closest to gate
+- $d_i$: shortest distance from gate to node $i$
+
+$$
+\text{LB} := \sum_{p \in P} \left[ F \times (Load_p + Unload_p) + \sum_{i \in N_{Load_p}} d_i + \sum_{i \in N_{Unload_p}} d_i \right]
+$$
+
 > LB is the optimal total cost under a relaxed setting where every non-gate node has an additional direct edge to gate whose cost equals shortest-path distance, i.e., ignoring blocking by other vehicles.
 >
 > ***Note: LB is provided with each problem; you do not need to compute it.***
