@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="OGC favicon">
+  <rect width="64" height="64" fill="#8ee2ff"/>
+  <rect x="6" y="6" width="52" height="52" fill="#ffffff" stroke="#10162f" stroke-width="4"/>
+  <circle cx="16" cy="18" r="10" fill="#10162f"/>
+  <circle cx="16" cy="18" r="5" fill="#1d4ed8"/>
+  <text
+    x="22"
+    y="39"
+    font-family="Arial Black, Impact, Geist, sans-serif"
+    font-size="25"
+    font-weight="900"
+    fill="#10162f"
+    stroke="#10162f"
+    stroke-width="0.6"
+    letter-spacing="-0.4"
+  >G</text>
+  <text
+    x="38"
+    y="54"
+    font-family="Arial Black, Impact, Geist, sans-serif"
+    font-size="25"
+    font-weight="900"
+    fill="#10162f"
+    stroke="#10162f"
+    stroke-width="0.6"
+    letter-spacing="-0.4"
+  >C</text>
+</svg>

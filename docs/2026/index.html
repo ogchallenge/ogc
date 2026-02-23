@@ -16,10 +16,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+KR:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap"
         rel="stylesheet"
     />
-    <link rel="stylesheet" href="../styles.581036042f.css" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="stylesheet" href="../styles.8d3e51751d.css" />
     <!-- Year-specific overrides (if needed) -->
     <!-- <link rel="stylesheet" href="styles.488b17f19a.css" />
     <!-- Highlight.js for syntax highlighting -->
@@ -416,8 +417,11 @@
                 }
             }, 100);
             
-            // 홈 페이지 숨기기
-            document.getElementById('home').style.display = 'none';
+            // 홈 페이지 숨기기 (home 섹션이 없는 레이아웃도 안전 처리)
+            const homeSection = document.getElementById('home');
+            if (homeSection) {
+                homeSection.style.display = 'none';
+            }
 
             document.title = `OGC2025 - ${pageTitle}`;
             
