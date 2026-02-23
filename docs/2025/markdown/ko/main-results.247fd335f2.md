@@ -1,31 +1,31 @@
-# Main Stage Results and Evaluation Problem Release
+# 본선 결과 및 평가문제 공개
 
-# Main Stage Has Ended!
+## 본선이 종료됐습니다!
 
-During the main stage period, approximately 514 algorithm submissions were made. Thank you for your passionate participation.
+본선 기간동안 총 514개 가량의 알고리즘이 제출되었습니다. 참가팀 여러분의 열정적인 참여에 감사드립니다. 
 
-# 10 Teams Advance to the Final 🫡
+## 결선 진출은 10팀 🫡
 
-The final-stage teams are the **top 10 teams** based on final main-stage results. Please refer to the table below.
+결선 진출팀은 본선 최종결과 기준으로 1**0팀** 입니다. 본선 최종결과는 아래 표를 참고하세요~
 
-# Main Stage Evaluation Problems Released
+## 본선 평가 문제 공개
 
 [stage2_problems.zip](https://github.com/ogchallenge/ogc/releases/download/ogc-2025-assets/2025_instances_test_stage2_problems_v1.0.0.zip)
 
-- P6–P10 are hidden problems.
-- There are 10 evaluation problems in total, with time limits:
-  - P1: 60
-  - P2: 180
-  - P3: 240
-  - P4: 90
-  - P5: 120
-  - P6(H6): 240
-  - P7(H7): 120
-  - P8(H8): 120
-  - P9(H9): 60
-  - P10(H10): 240
+- P6~P10 이 hidden 문제들 입니다.
+- 본 평가문제는 총 10문제이며 각 문제의 timelimit 는 다음과 같습니다.
+    - P1: 60
+    - P2: 180
+    - P3: 240
+    - P4: 90
+    - P5: 120
+    - P6(H6): 240
+    - P7(H7): 120
+    - P8(H8): 120
+    - P9(H9): 60
+    - P10(H10): 240
 
-# Final Main-Stage Results
+## 본선최종결과
 
 | ranking | team_name                | P1_score | P2_score | P3_score | P4_score | P5_score | H6_score | H7_score | H8_score | H9_score | H10_score | total_score | P1_obj     | P2_obj     | P3_obj     | P4_obj     | P5_obj     | H6_obj | H7_obj | H8_obj | H9_obj     | H10_obj |
 | ------- | ------------------------ | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | --------- | ----------- | ---------- | ---------- | ---------- | ---------- | ---------- | ------ | ------ | ------ | ---------- | ------- |

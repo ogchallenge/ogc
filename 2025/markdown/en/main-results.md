@@ -1,14 +1,14 @@
 # Main Stage Results and Evaluation Problem Release
 
-# Main Stage Has Ended!
+## Main Stage Has Ended!
 
 During the main stage period, approximately 514 algorithm submissions were made. Thank you for your passionate participation.
 
-# 10 Teams Advance to the Final 🫡
+## 10 Teams Advance to the Final 🫡
 
 The final-stage teams are the **top 10 teams** based on final main-stage results. Please refer to the table below.
 
-# Main Stage Evaluation Problems Released
+## Main Stage Evaluation Problems Released
 
 [stage2_problems.zip](instances/test/stage2_problems.zip)
 
@@ -25,7 +25,7 @@ The final-stage teams are the **top 10 teams** based on final main-stage results
   - P9(H9): 60
   - P10(H10): 240
 
-# Final Main-Stage Results
+## Final Main-Stage Results
 
 | ranking | team_name                | P1_score | P2_score | P3_score | P4_score | P5_score | H6_score | H7_score | H8_score | H9_score | H10_score | total_score | P1_obj     | P2_obj     | P3_obj     | P4_obj     | P5_obj     | H6_obj | H7_obj | H8_obj | H9_obj     | H10_obj |
 | ------- | ------------------------ | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | --------- | ----------- | ---------- | ---------- | ---------- | ---------- | ---------- | ------ | ------ | ------ | ---------- | ------- |
